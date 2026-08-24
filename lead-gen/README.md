@@ -6,12 +6,43 @@ Buyer prospecting for **4-methylpentan-2-one (methyl isobutyl ketone)**, HSN
 | File | What it is |
 | --- | --- |
 | `data/mibk_leads_brazil.json` | The lead list — 45 companies, editable by hand |
-| `enrich.py` | Crawl4AI pipeline that fills in buyer email / phone |
+| `data/apify_google_maps.json` | Verified phones/emails pulled from Google Maps |
+| `merge_apify.py` | Folds Apify results into the lead list |
+| `enrich.py` | Crawl4AI pipeline + xlsx writer |
 | `out/MIBK_Leads_Brazil_enriched.xlsx` | Generated deliverable (git-ignored) |
 
-The xlsx keeps the original 10 columns of `MIBI_NITISH.xlsx` in their exact
-order, and appends 8 more (Website, MIBK Use Case, Buyer Type, Priority, HSN
-Code, Contact Source URL, Contact Quality, Notes).
+`Sheet2` of the xlsx is **exactly** the 10 columns of `MIBI_NITISH.xlsx`, in
+order, with nothing appended. The extra intelligence (priority, use case, all
+emails found, contact quality, source) lives on a separate `Lead Intel` sheet
+so the original format stays clean.
+
+## Two routes to contact data
+
+**Route 1 — Apify (works, used for the current data).** Apify runs scrapers on
+its own cloud, so it works even where outbound network access is restricted.
+The Google Maps Scraper (`compass/crawler-google-places`) returned verified
+switchboard numbers for 39 of 45 companies and corrected 7 wrong cities.
+
+```bash
+# via the Apify MCP server or API: compass/crawler-google-places
+#   searchStringsArray: ["<company> <city>", ...]
+#   locationQuery: "Brazil", scrapePlaceDetailPage: true, scrapeContacts: true
+python merge_apify.py data/apify_google_maps.json
+python enrich.py --no-crawl
+```
+
+**Route 2 — Crawl4AI (`enrich.py`).** Crawls each company's own contact pages
+directly. Needs real outbound internet.
+
+### What the two routes actually yield
+
+Generic website contact-scraping mostly returns the wrong department. Measured
+on a test batch: `cbmm.com` gave a REACH mailbox and their outside law firm;
+`killing.com.br` gave `dpo@` and `recrutamento@`. Large Brazilian corporates do
+not publish `compras@`. Google Maps is the better source for a verified
+switchboard number, which is the realistic way in — ask for *suprimentos*.
+
+One genuine exception found: **AkzoNobel publishes `sourcing@akzonobel.com`**.
 
 ## Run it
 
@@ -25,9 +56,8 @@ python enrich.py --only CBMM,Vale   # test on a couple of companies first
 python enrich.py --no-crawl         # rebuild the xlsx without crawling
 ```
 
-**This needs real outbound internet.** It will not work inside a sandbox whose
-egress proxy blocks general web access — which is why the contact columns are
-still empty in the committed data.
+**Route 2 needs real outbound internet.** It will not work inside a sandbox
+whose egress proxy blocks general web access; use Route 1 (Apify) there.
 
 ## How contacts are found
 

@@ -259,6 +259,33 @@ async def llm_refine(crawler, lead: dict, contact: Contact, run_cfg_factory) -> 
     return contact
 
 
+def resolve_contact(lead: dict, crawled: Contact) -> Contact:
+    """Combine what merge_apify.py stored on the lead with any live crawl result."""
+    c = Contact(
+        emails=list(crawled.emails),
+        phones=list(crawled.phones),
+        person=crawled.person,
+        linkedin=crawled.linkedin,
+        source_url=crawled.source_url,
+    )
+    if lead.get("phone") and lead["phone"] not in c.phones:
+        c.phones.insert(0, lead["phone"])
+    for e in lead.get("emails_found") or []:
+        if e not in c.emails:
+            c.emails.append(e)
+    c.emails = clean_emails(c.emails, lead.get("website", ""))
+    people = lead.get("people") or []
+    if people and not c.person:
+        c.person = people[0].get("name", "")
+        c.linkedin = c.linkedin or people[0].get("linkedin", "")
+        if people[0].get("mobile"):
+            c.phones.insert(0, people[0]["mobile"])
+    if not c.source_url and lead.get("phone_source"):
+        c.source_url = lead["phone_source"]
+    c.quality = grade(c)
+    return c
+
+
 def write_xlsx(payload: dict, results: dict[str, Contact]) -> None:
     import openpyxl
     from openpyxl.styles import Alignment, Font, PatternFill
@@ -268,12 +295,23 @@ def write_xlsx(payload: dict, results: dict[str, Contact]) -> None:
     ws = wb.active
     ws.title = "Sheet2"
 
-    header = BASE_COLUMNS + EXTRA_COLUMNS
-    ws.append(header)
-    for cell in ws[1]:
-        cell.font = Font(bold=True, color="FFFFFF")
-        cell.fill = PatternFill("solid", fgColor="1F4E79")
-        cell.alignment = Alignment(vertical="center", wrap_text=True)
+    head_font = Font(bold=True, color="FFFFFF")
+    head_fill = PatternFill("solid", fgColor="1F4E79")
+
+    def style_header(sheet):
+        for cell in sheet[1]:
+            cell.font = head_font
+            cell.fill = head_fill
+            cell.alignment = Alignment(vertical="center", wrap_text=True)
+
+    # Sheet2 keeps the source workbook's exact 10 columns, nothing appended.
+    ws.append(BASE_COLUMNS)
+    style_header(ws)
+
+    intel = wb.create_sheet("Lead Intel")
+    intel.append(["Company Name", "Priority", "Buyer Type", "MIBK Use Case", "Website",
+                  "HSN Code", "All Emails Found", "Contact Quality", "Data Source", "Notes"])
+    style_header(intel)
 
     prio_fill = {
         "A": PatternFill("solid", fgColor="C6EFCE"),
@@ -282,7 +320,7 @@ def write_xlsx(payload: dict, results: dict[str, Contact]) -> None:
     }
 
     for lead in payload["leads"]:
-        c = results.get(lead["company"], Contact(quality="not crawled"))
+        c = resolve_contact(lead, results.get(lead["company"], Contact()))
         ws.append([
             lead["company"],
             lead.get("city", ""),
@@ -291,26 +329,32 @@ def write_xlsx(payload: dict, results: dict[str, Contact]) -> None:
             lead.get("consumption", ""),
             lead.get("confidence", ""),
             c.person,
-            "; ".join(c.phones[:2]),
-            "; ".join(c.emails[:2]),
+            c.phones[0] if c.phones else "",
+            c.emails[0] if c.emails else "",
             c.linkedin,
-            lead.get("website", ""),
-            lead.get("use_case", ""),
-            lead.get("buyer_type", ""),
+        ])
+        intel.append([
+            lead["company"],
             lead.get("priority", ""),
+            lead.get("buyer_type", ""),
+            lead.get("use_case", ""),
+            lead.get("website", ""),
             prod["hsn_code"],
-            c.source_url,
+            "; ".join(c.emails),
             c.quality,
+            c.source_url,
             lead.get("notes", ""),
         ])
         if lead.get("priority") in prio_fill:
-            ws.cell(row=ws.max_row, column=14).fill = prio_fill[lead["priority"]]
+            intel.cell(row=intel.max_row, column=2).fill = prio_fill[lead["priority"]]
 
-    widths = [34, 20, 10, 30, 20, 12, 20, 22, 34, 22, 22, 46, 20, 8, 12, 34, 30, 40]
-    for i, w in enumerate(widths, 1):
+    for i, w in enumerate([34, 22, 10, 32, 22, 12, 22, 22, 36, 26], 1):
         ws.column_dimensions[openpyxl.utils.get_column_letter(i)].width = w
-    ws.freeze_panes = "A2"
-    ws.auto_filter.ref = ws.dimensions
+    for i, w in enumerate([34, 8, 22, 48, 24, 12, 46, 34, 30, 44], 1):
+        intel.column_dimensions[openpyxl.utils.get_column_letter(i)].width = w
+    for sheet in (ws, intel):
+        sheet.freeze_panes = "A2"
+        sheet.auto_filter.ref = sheet.dimensions
 
     meta = wb.create_sheet("Product & Method")
     meta.append(["Field", "Value"])
