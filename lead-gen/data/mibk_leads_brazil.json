@@ -5,13 +5,14 @@
     "subheading_description": "4-Methylpentan-2-one",
     "hsn_code": "29141300",
     "cas": "108-10-1",
-    "market": "Brazil"
+    "market": "Worldwide (export from India)"
   },
   "meta": {
     "note": "Consumption figures are ANALYST ESTIMATES derived from sector, plant scale and MIBK intensity of the end-use process - not verified purchase data. The 'confidence' field grades them. Contact fields are intentionally EMPTY where unverified; run enrich.py to populate them. Never send an offer against an unverified contact.",
     "city_basis": "Primary Brazilian plant or head-office location from public company information. Verify before use.",
     "generated": "2026-08-24",
-    "cnpj_note": "Add a 'cnpj' to any lead to unlock free Receita Federal enrichment via free_enrich.py --cnpj. Look CNPJs up at https://opencnpj.org."
+    "cnpj_note": "Add a 'cnpj' to any lead to unlock free Receita Federal enrichment via free_enrich.py --cnpj. Look CNPJs up at https://opencnpj.org.",
+    "scope": "Worldwide MIBK buyer list built for an India-based exporter. Priority A/B/C weighs freight distance from Indian ports, absence of domestic MIBK production, and order size. Distributors and trading houses rank high because they buy to resell and qualify fastest."
   },
   "leads": [
     {
@@ -27,7 +28,9 @@
       "origin": "original",
       "city_source": "Google Maps (verified)",
       "cnpj": "43.996.693/0001-27",
-      "cnpj_source": "public CNPJ registry listing"
+      "cnpj_source": "public CNPJ registry listing",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Sherwin-Williams Brasil",
@@ -48,7 +51,9 @@
         "swhelp@sherwin.com.br",
         "tintometrico@sherwin.com.br"
       ],
-      "email_source": "Company website via Google Maps enrichment"
+      "email_source": "Company website via Google Maps enrichment",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "AkzoNobel Brasil (Coral)",
@@ -67,7 +72,9 @@
       "emails_found": [
         "sourcing@akzonobel.com"
       ],
-      "email_source": "Company website via Google Maps enrichment"
+      "email_source": "Company website via Google Maps enrichment",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "BASF Coatings / Suvinil",
@@ -86,7 +93,9 @@
       "emails_found": [
         "atendimentocomercial@basf.com"
       ],
-      "email_source": "Company website via Google Maps enrichment"
+      "email_source": "Company website via Google Maps enrichment",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "WEG Tintas",
@@ -106,7 +115,9 @@
         "tintas@weg.net",
         "info-br@weg.net"
       ],
-      "email_source": "Company website via Google Maps enrichment"
+      "email_source": "Company website via Google Maps enrichment",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Henkel Brasil",
@@ -121,7 +132,9 @@
       "origin": "original",
       "phone": "+55 11 3205-7000",
       "phone_source": "Google Maps (verified)",
-      "city_source": "Google Maps (verified)"
+      "city_source": "Google Maps (verified)",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "H.B. Fuller Brasil",
@@ -136,7 +149,9 @@
       "origin": "original",
       "phone": "+55 15 3228-2884",
       "phone_source": "Google Maps (verified)",
-      "city_source": "Google Maps (verified)"
+      "city_source": "Google Maps (verified)",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Sika Brasil",
@@ -151,7 +166,9 @@
       "origin": "original",
       "phone": "+55 800 703 7340",
       "phone_source": "Google Maps (verified)",
-      "city_source": "Google Maps (verified)"
+      "city_source": "Google Maps (verified)",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Bridgestone Brasil",
@@ -166,7 +183,9 @@
       "origin": "original",
       "phone": "+55 800 016 1718",
       "phone_source": "Google Maps (verified)",
-      "city_source": "Google Maps (verified)"
+      "city_source": "Google Maps (verified)",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Michelin Brasil",
@@ -181,7 +200,9 @@
       "origin": "original",
       "phone": "+55 800 970 9400",
       "phone_source": "Google Maps (verified)",
-      "city_source": "Google Maps (verified)"
+      "city_source": "Google Maps (verified)",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Pirelli Brasil",
@@ -200,7 +221,9 @@
       "emails_found": [
         "sac.pneus@pirelli.com"
       ],
-      "email_source": "Company website via Google Maps enrichment"
+      "email_source": "Company website via Google Maps enrichment",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Continental Brasil",
@@ -215,7 +238,9 @@
       "origin": "original",
       "phone": "+55 71 4003-9540",
       "phone_source": "Google Maps (verified)",
-      "city_source": "Google Maps (verified)"
+      "city_source": "Google Maps (verified)",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Bayer Crop Science Brasil",
@@ -230,7 +255,9 @@
       "origin": "original",
       "phone": "+55 800 011 5560",
       "phone_source": "Google Maps (verified)",
-      "city_source": "Google Maps (verified)"
+      "city_source": "Google Maps (verified)",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Syngenta Brasil",
@@ -245,7 +272,9 @@
       "origin": "original",
       "phone": "+55 11 5643-2322",
       "phone_source": "Google Maps (verified)",
-      "city_source": "Google Maps (verified)"
+      "city_source": "Google Maps (verified)",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "UPL Brasil",
@@ -264,7 +293,9 @@
       "emails_found": [
         "uplbr.faleconosco@upl-ltd.com"
       ],
-      "email_source": "Company website via Google Maps enrichment"
+      "email_source": "Company website via Google Maps enrichment",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Braskem",
@@ -276,7 +307,9 @@
       "use_case": "Process/extraction solvent; potential toll blending",
       "buyer_type": "Producer/processor",
       "priority": "C",
-      "origin": "original"
+      "origin": "original",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Oxiteno (Indorama Ventures)",
@@ -293,7 +326,9 @@
       "phone_source": "Google Maps (verified)",
       "city_source": "Google Maps (verified)",
       "cnpj": "62.545.686/0001-53",
-      "cnpj_source": "public CNPJ registry listing"
+      "cnpj_source": "public CNPJ registry listing",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Elekeiroz",
@@ -312,7 +347,9 @@
       "emails_found": [
         "contato@elekeiroz.com.br"
       ],
-      "email_source": "Company website via Google Maps enrichment"
+      "email_source": "Company website via Google Maps enrichment",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "CBMM - Companhia Brasileira de Metalurgia e Mineração",
@@ -332,7 +369,9 @@
       "emails_found": [
         "cbmm@cbmm.com"
       ],
-      "email_source": "Company website via Google Maps enrichment"
+      "email_source": "Company website via Google Maps enrichment",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Vale S.A.",
@@ -345,7 +384,9 @@
       "buyer_type": "End user (via reagent supplier)",
       "priority": "B",
       "origin": "added",
-      "city_source": "Google Maps (verified)"
+      "city_source": "Google Maps (verified)",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Clariant Mining Solutions Brasil",
@@ -360,7 +401,9 @@
       "origin": "added",
       "phone": "+55 11 4745-8000",
       "phone_source": "Google Maps (verified)",
-      "city_source": "Google Maps (verified)"
+      "city_source": "Google Maps (verified)",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Nexa Resources",
@@ -375,7 +418,9 @@
       "origin": "added",
       "phone": "+55 11 3405-4499",
       "phone_source": "Google Maps (verified)",
-      "city_source": "Google Maps (verified)"
+      "city_source": "Google Maps (verified)",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Artecola Química",
@@ -391,7 +436,9 @@
       "phone": "+55 51 3778-5200",
       "phone_source": "Google Maps (verified)",
       "city_previous_estimate": "Campo Bom, RS",
-      "city_source": "Google Maps (verified)"
+      "city_source": "Google Maps (verified)",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Killing S/A Tintas e Adesivos",
@@ -406,7 +453,9 @@
       "origin": "added",
       "phone": "+55 51 3586-8100",
       "phone_source": "Google Maps (verified)",
-      "city_source": "Google Maps (verified)"
+      "city_source": "Google Maps (verified)",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Renner Sayerlack (Sherwin-Williams)",
@@ -425,7 +474,9 @@
       "emails_found": [
         "customerservice@rennerwoodcoatings.com"
       ],
-      "email_source": "Company website via Google Maps enrichment"
+      "email_source": "Company website via Google Maps enrichment",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Axalta Coating Systems Brasil",
@@ -440,7 +491,9 @@
       "origin": "added",
       "phone": "+55 11 2465-7566",
       "phone_source": "Google Maps (verified)",
-      "city_source": "Google Maps (verified)"
+      "city_source": "Google Maps (verified)",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Anjo Tintas",
@@ -455,7 +508,9 @@
       "origin": "added",
       "phone": "+55 48 3461-8000",
       "phone_source": "Google Maps (verified)",
-      "city_source": "Google Maps (verified)"
+      "city_source": "Google Maps (verified)",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Farben S/A",
@@ -469,7 +524,9 @@
       "priority": "B",
       "origin": "added",
       "city_previous_estimate": "São Bento do Sul, SC",
-      "city_source": "Google Maps (verified)"
+      "city_source": "Google Maps (verified)",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Montana Química",
@@ -489,7 +546,9 @@
         "montana@montana.com.br",
         "montanasul@montana.com.br"
       ],
-      "email_source": "Company website via Google Maps enrichment"
+      "email_source": "Company website via Google Maps enrichment",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Hempel Brasil",
@@ -509,7 +568,9 @@
       "emails_found": [
         "hempel.br@hempel.com"
       ],
-      "email_source": "Company website via Google Maps enrichment"
+      "email_source": "Company website via Google Maps enrichment",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Jotun Brasil",
@@ -525,7 +586,9 @@
       "phone": "+55 11 4543-6292",
       "phone_source": "Google Maps (verified)",
       "city_previous_estimate": "São Paulo, SP",
-      "city_source": "Google Maps (verified)"
+      "city_source": "Google Maps (verified)",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "3M do Brasil",
@@ -540,7 +603,9 @@
       "origin": "added",
       "phone": "+55 800 013 2333",
       "phone_source": "Google Maps (verified)",
-      "city_source": "Google Maps (verified)"
+      "city_source": "Google Maps (verified)",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Bostik Brasil (Arkema)",
@@ -556,7 +621,9 @@
       "phone": "+55 11 4784-9797",
       "phone_source": "Google Maps (verified)",
       "city_previous_estimate": "Chácara Santo Antônio, SP",
-      "city_source": "Google Maps (verified)"
+      "city_source": "Google Maps (verified)",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Goodyear do Brasil",
@@ -571,7 +638,9 @@
       "origin": "added",
       "phone": "+55 19 3471-1227",
       "phone_source": "Google Maps (verified)",
-      "city_source": "Google Maps (verified)"
+      "city_source": "Google Maps (verified)",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Brenntag Brasil",
@@ -587,7 +656,9 @@
       "notes": "Distributors are usually the fastest route to volume for a trader.",
       "phone": "+55 11 2489-4151",
       "phone_source": "Google Maps (verified)",
-      "city_source": "Google Maps (verified)"
+      "city_source": "Google Maps (verified)",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Univar Solutions Brasil",
@@ -603,7 +674,9 @@
       "phone": "+55 11 3602-7222",
       "phone_source": "Google Maps (verified)",
       "city_previous_estimate": "São Paulo, SP",
-      "city_source": "Google Maps (verified)"
+      "city_source": "Google Maps (verified)",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "IMCD Brasil",
@@ -619,7 +692,9 @@
       "phone": "+55 11 4360-6400",
       "phone_source": "Google Maps (verified)",
       "city_previous_estimate": "São Paulo, SP",
-      "city_source": "Google Maps (verified)"
+      "city_source": "Google Maps (verified)",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Química Anastácio",
@@ -634,7 +709,9 @@
       "origin": "added",
       "phone": "+55 11 2133-6600",
       "phone_source": "Google Maps (verified)",
-      "city_source": "Google Maps (verified)"
+      "city_source": "Google Maps (verified)",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Quimidrol",
@@ -655,7 +732,9 @@
         "vendas5@quimidrol.com.br",
         "sac@quimidrol.com.br"
       ],
-      "email_source": "Company website via Google Maps enrichment"
+      "email_source": "Company website via Google Maps enrichment",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Nortox S/A",
@@ -670,7 +749,9 @@
       "origin": "added",
       "phone": "+55 43 3274-8585",
       "phone_source": "Google Maps (verified)",
-      "city_source": "Google Maps (verified)"
+      "city_source": "Google Maps (verified)",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Ouro Fino Química",
@@ -685,7 +766,9 @@
       "origin": "added",
       "phone": "+55 34 3326-2000",
       "phone_source": "Google Maps (verified)",
-      "city_source": "Google Maps (verified)"
+      "city_source": "Google Maps (verified)",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "FMC Química do Brasil",
@@ -700,7 +783,9 @@
       "origin": "added",
       "phone": "+55 19 2042-4500",
       "phone_source": "Google Maps (verified)",
-      "city_source": "Google Maps (verified)"
+      "city_source": "Google Maps (verified)",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "EMS S/A",
@@ -713,7 +798,9 @@
       "buyer_type": "End user",
       "priority": "C",
       "origin": "added",
-      "city_source": "Google Maps (verified)"
+      "city_source": "Google Maps (verified)",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Eurofarma",
@@ -726,7 +813,9 @@
       "buyer_type": "End user",
       "priority": "C",
       "origin": "added",
-      "city_source": "Google Maps (verified)"
+      "city_source": "Google Maps (verified)",
+      "country": "Brazil",
+      "region": "Latin America"
     },
     {
       "company": "Cristália Produtos Químicos",
@@ -741,7 +830,1472 @@
       "origin": "added",
       "phone": "+55 19 3544-5021",
       "phone_source": "Google Maps (verified)",
-      "city_source": "Google Maps (verified)"
+      "city_source": "Google Maps (verified)",
+      "country": "Brazil",
+      "region": "Latin America"
+    },
+    {
+      "company": "Brenntag SE",
+      "city": "Essen",
+      "country": "Germany",
+      "region": "Europe",
+      "sector": "Chemical distribution",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Bulk solvent distribution - buys to resell, largest order sizes",
+      "buyer_type": "Distributor",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "Univar Solutions",
+      "city": "Downers Grove, IL",
+      "country": "USA",
+      "region": "North America",
+      "sector": "Chemical distribution",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Bulk solvent distribution - buys to resell, largest order sizes",
+      "buyer_type": "Distributor",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "IMCD Group",
+      "city": "Rotterdam",
+      "country": "Netherlands",
+      "region": "Europe",
+      "sector": "Chemical distribution",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Bulk solvent distribution - buys to resell, largest order sizes",
+      "buyer_type": "Distributor",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "Azelis",
+      "city": "Antwerp",
+      "country": "Belgium",
+      "region": "Europe",
+      "sector": "Chemical distribution",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Bulk solvent distribution - buys to resell, largest order sizes",
+      "buyer_type": "Distributor",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "Barentz International",
+      "city": "Hoofddorp",
+      "country": "Netherlands",
+      "region": "Europe",
+      "sector": "Chemical distribution",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Bulk solvent distribution - buys to resell, largest order sizes",
+      "buyer_type": "Distributor",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "Biesterfeld AG",
+      "city": "Hamburg",
+      "country": "Germany",
+      "region": "Europe",
+      "sector": "Chemical distribution",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Bulk solvent distribution - buys to resell, largest order sizes",
+      "buyer_type": "Distributor",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "HELM AG",
+      "city": "Hamburg",
+      "country": "Germany",
+      "region": "Europe",
+      "sector": "Chemical trading",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "International chemical trading house - spot and term cargoes",
+      "buyer_type": "Trader",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "Stockmeier Chemie",
+      "city": "Bielefeld",
+      "country": "Germany",
+      "region": "Europe",
+      "sector": "Chemical distribution",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Bulk solvent distribution - buys to resell, largest order sizes",
+      "buyer_type": "Distributor",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Ravago Chemicals",
+      "city": "Arendonk",
+      "country": "Belgium",
+      "region": "Europe",
+      "sector": "Chemical distribution",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Bulk solvent distribution - buys to resell, largest order sizes",
+      "buyer_type": "Distributor",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Overlack AG",
+      "city": "Moenchengladbach",
+      "country": "Germany",
+      "region": "Europe",
+      "sector": "Chemical distribution",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Bulk solvent distribution - buys to resell, largest order sizes",
+      "buyer_type": "Distributor",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Tricon Energy",
+      "city": "Houston, TX",
+      "country": "USA",
+      "region": "North America",
+      "sector": "Chemical trading",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "International chemical trading house - spot and term cargoes",
+      "buyer_type": "Trader",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "Vinmar International",
+      "city": "Houston, TX",
+      "country": "USA",
+      "region": "North America",
+      "sector": "Chemical trading",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "International chemical trading house - spot and term cargoes",
+      "buyer_type": "Trader",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "Behn Meyer Group",
+      "city": "Hamburg",
+      "country": "Germany",
+      "region": "Asia-Pacific",
+      "sector": "Chemical distribution",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Bulk solvent distribution - buys to resell, largest order sizes",
+      "buyer_type": "Distributor",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "Connell Brothers",
+      "city": "San Francisco, CA",
+      "country": "USA",
+      "region": "Asia-Pacific",
+      "sector": "Chemical distribution",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Bulk solvent distribution - buys to resell, largest order sizes",
+      "buyer_type": "Distributor",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "Sojitz Corporation",
+      "city": "Tokyo",
+      "country": "Japan",
+      "region": "East Asia",
+      "sector": "Chemical trading",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "International chemical trading house - spot and term cargoes",
+      "buyer_type": "Trader",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Itochu Corporation",
+      "city": "Tokyo",
+      "country": "Japan",
+      "region": "East Asia",
+      "sector": "Chemical trading",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "International chemical trading house - spot and term cargoes",
+      "buyer_type": "Trader",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Marubeni Corporation",
+      "city": "Tokyo",
+      "country": "Japan",
+      "region": "East Asia",
+      "sector": "Chemical trading",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "International chemical trading house - spot and term cargoes",
+      "buyer_type": "Trader",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Petrochem Middle East",
+      "city": "Dubai",
+      "country": "UAE",
+      "region": "Middle East",
+      "sector": "Chemical distribution",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Bulk solvent distribution - buys to resell, largest order sizes",
+      "buyer_type": "Distributor",
+      "priority": "A",
+      "origin": "global",
+      "phone": "+971 4 4179300",
+      "phone_source": "Company site / trade directory (web search)",
+      "emails_found": [
+        "sales@petrocheme.com"
+      ],
+      "email_source": "Company site / trade directory (web search)",
+      "website": "petrocheme.com"
+    },
+    {
+      "company": "Gulf Additives & Chemicals",
+      "city": "Dubai",
+      "country": "UAE",
+      "region": "Middle East",
+      "sector": "Chemical distribution",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Bulk solvent distribution - buys to resell, largest order sizes",
+      "buyer_type": "Distributor",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "Chemical Trading & Consulting (CTC)",
+      "city": "Dubai",
+      "country": "UAE",
+      "region": "Middle East",
+      "sector": "Chemical trading",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "International chemical trading house - spot and term cargoes",
+      "buyer_type": "Trader",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "National Paints Factories",
+      "city": "Sharjah",
+      "country": "UAE",
+      "region": "Middle East",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "A",
+      "origin": "global",
+      "phone": "+971 6 5340111",
+      "phone_source": "Company site / trade directory (web search)",
+      "website": "nationalpaints.com"
+    },
+    {
+      "company": "Jotun UAE",
+      "city": "Dubai",
+      "country": "UAE",
+      "region": "Middle East",
+      "sector": "Marine & protective coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Marine/protective coating solvent blends",
+      "buyer_type": "End user",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "Berger Paints Emirates",
+      "city": "Dubai",
+      "country": "UAE",
+      "region": "Middle East",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "Hempel Paints UAE",
+      "city": "Dubai",
+      "country": "UAE",
+      "region": "Middle East",
+      "sector": "Marine & protective coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Marine/protective coating solvent blends",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Al Gurair Paints",
+      "city": "Dubai",
+      "country": "UAE",
+      "region": "Middle East",
+      "sector": "Industrial coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Kansai Paint Middle East",
+      "city": "Sharjah",
+      "country": "UAE",
+      "region": "Middle East",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Jazeera Paints",
+      "city": "Riyadh",
+      "country": "Saudi Arabia",
+      "region": "Middle East",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "National Paints Saudi",
+      "city": "Dammam",
+      "country": "Saudi Arabia",
+      "region": "Middle East",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "Sigma Paints Saudi Arabia (PPG)",
+      "city": "Dammam",
+      "country": "Saudi Arabia",
+      "region": "Middle East",
+      "sector": "Protective coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Marine/protective coating solvent blends",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Arabian Chemical Company (Resins)",
+      "city": "Jeddah",
+      "country": "Saudi Arabia",
+      "region": "Middle East",
+      "sector": "Resins & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Kuwait Paint Company",
+      "city": "Kuwait City",
+      "country": "Kuwait",
+      "region": "Middle East",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Oman Paints & Chemicals",
+      "city": "Muscat",
+      "country": "Oman",
+      "region": "Middle East",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "C",
+      "origin": "global"
+    },
+    {
+      "company": "Qatar Paint Company",
+      "city": "Doha",
+      "country": "Qatar",
+      "region": "Middle East",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "C",
+      "origin": "global"
+    },
+    {
+      "company": "DYO Boya",
+      "city": "Izmir",
+      "country": "Turkey",
+      "region": "Europe",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "Polisan Kansai Boya",
+      "city": "Kocaeli",
+      "country": "Turkey",
+      "region": "Europe",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "Betek Boya",
+      "city": "Istanbul",
+      "country": "Turkey",
+      "region": "Europe",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Marshall Boya (AkzoNobel)",
+      "city": "Istanbul",
+      "country": "Turkey",
+      "region": "Europe",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Casati Boya",
+      "city": "Istanbul",
+      "country": "Turkey",
+      "region": "Europe",
+      "sector": "Wood coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "NC wood lacquer solvent - the most MIBK-intensive coating segment",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Ravago Petrokimya",
+      "city": "Istanbul",
+      "country": "Turkey",
+      "region": "Europe",
+      "sector": "Chemical distribution",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Bulk solvent distribution - buys to resell, largest order sizes",
+      "buyer_type": "Distributor",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "Berger Paints Bangladesh",
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "region": "South Asia",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "Asian Paints Bangladesh",
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "region": "South Asia",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "Elite Paint & Chemical",
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "region": "South Asia",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Roxy Paints",
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "region": "South Asia",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "C",
+      "origin": "global"
+    },
+    {
+      "company": "Apex Footwear",
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "region": "South Asia",
+      "sector": "Footwear adhesives",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Solvent-borne contact adhesive formulation (footwear, laminates)",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Causeway Paints",
+      "city": "Colombo",
+      "country": "Sri Lanka",
+      "region": "South Asia",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Multilac (Nippon Paint Lanka)",
+      "city": "Colombo",
+      "country": "Sri Lanka",
+      "region": "South Asia",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Asian Paints Nepal",
+      "city": "Kathmandu",
+      "country": "Nepal",
+      "region": "South Asia",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "C",
+      "origin": "global"
+    },
+    {
+      "company": "TOA Paint Thailand",
+      "city": "Bangkok",
+      "country": "Thailand",
+      "region": "Asia-Pacific",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "Beger Paint",
+      "city": "Bangkok",
+      "country": "Thailand",
+      "region": "Asia-Pacific",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Nippon Paint Thailand",
+      "city": "Bangkok",
+      "country": "Thailand",
+      "region": "Asia-Pacific",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Chugoku Marine Paints Thailand",
+      "city": "Rayong",
+      "country": "Thailand",
+      "region": "Asia-Pacific",
+      "sector": "Marine coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Marine/protective coating solvent blends",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Avian Brands",
+      "city": "Surabaya",
+      "country": "Indonesia",
+      "region": "Asia-Pacific",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "Propan Raya",
+      "city": "Tangerang",
+      "country": "Indonesia",
+      "region": "Asia-Pacific",
+      "sector": "Wood coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "NC wood lacquer solvent - the most MIBK-intensive coating segment",
+      "buyer_type": "End user",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "Mowilex Indonesia",
+      "city": "Tangerang",
+      "country": "Indonesia",
+      "region": "Asia-Pacific",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Pacific Paint (Kansai) Indonesia",
+      "city": "Jakarta",
+      "country": "Indonesia",
+      "region": "Asia-Pacific",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "PT AKR Corporindo",
+      "city": "Jakarta",
+      "country": "Indonesia",
+      "region": "Asia-Pacific",
+      "sector": "Chemical distribution",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Bulk solvent distribution - buys to resell, largest order sizes",
+      "buyer_type": "Distributor",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "PT Lautan Luas",
+      "city": "Jakarta",
+      "country": "Indonesia",
+      "region": "Asia-Pacific",
+      "sector": "Chemical distribution",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Bulk solvent distribution - buys to resell, largest order sizes",
+      "buyer_type": "Distributor",
+      "priority": "A",
+      "origin": "global",
+      "phone": "+62 21 8066 0777",
+      "phone_source": "Company site (web search)",
+      "website": "lautan-luas.com"
+    },
+    {
+      "company": "PT Justus Kimiaraya",
+      "city": "Jakarta",
+      "country": "Indonesia",
+      "region": "Asia-Pacific",
+      "sector": "Chemical distribution",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Bulk solvent distribution - buys to resell, largest order sizes",
+      "buyer_type": "Distributor",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "4 Oranges Co.",
+      "city": "Ho Chi Minh City",
+      "country": "Vietnam",
+      "region": "Asia-Pacific",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "Kova Paint",
+      "city": "Ho Chi Minh City",
+      "country": "Vietnam",
+      "region": "Asia-Pacific",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Joton Paint",
+      "city": "Hanoi",
+      "country": "Vietnam",
+      "region": "Asia-Pacific",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Pou Chen Vietnam",
+      "city": "Dong Nai",
+      "country": "Vietnam",
+      "region": "Asia-Pacific",
+      "sector": "Footwear manufacturing",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Solvent-borne contact adhesive formulation (footwear, laminates)",
+      "buyer_type": "End user",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "Feng Tay Enterprises Vietnam",
+      "city": "Ho Chi Minh City",
+      "country": "Vietnam",
+      "region": "Asia-Pacific",
+      "sector": "Footwear manufacturing",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Solvent-borne contact adhesive formulation (footwear, laminates)",
+      "buyer_type": "End user",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "VietChem",
+      "city": "Hanoi",
+      "country": "Vietnam",
+      "region": "Asia-Pacific",
+      "sector": "Chemical distribution",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Bulk solvent distribution - buys to resell, largest order sizes",
+      "buyer_type": "Distributor",
+      "priority": "A",
+      "origin": "global",
+      "phone": "+84 963 029 988",
+      "phone_source": "Company site (web search)",
+      "emails_found": [
+        "sales@hoachat.com.vn"
+      ],
+      "email_source": "Company site (web search)",
+      "website": "vietchem.com.vn"
+    },
+    {
+      "company": "Duc Giang Chemicals",
+      "city": "Hanoi",
+      "country": "Vietnam",
+      "region": "Asia-Pacific",
+      "sector": "Chemical manufacturing",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Bulk solvent distribution - buys to resell, largest order sizes",
+      "buyer_type": "Distributor",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Nippon Paint Malaysia",
+      "city": "Shah Alam",
+      "country": "Malaysia",
+      "region": "Asia-Pacific",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Kansai Paint Malaysia",
+      "city": "Shah Alam",
+      "country": "Malaysia",
+      "region": "Asia-Pacific",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Chemical Company of Malaysia",
+      "city": "Kuala Lumpur",
+      "country": "Malaysia",
+      "region": "Asia-Pacific",
+      "sector": "Chemical distribution",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Bulk solvent distribution - buys to resell, largest order sizes",
+      "buyer_type": "Distributor",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Pacific Paint (Boysen) Philippines",
+      "city": "Manila",
+      "country": "Philippines",
+      "region": "Asia-Pacific",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Davies Paints Philippines",
+      "city": "Manila",
+      "country": "Philippines",
+      "region": "Asia-Pacific",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "C",
+      "origin": "global"
+    },
+    {
+      "company": "Paints & Chemical Industries (Pachin)",
+      "city": "Cairo",
+      "country": "Egypt",
+      "region": "Africa",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "Sipes Egypt",
+      "city": "Cairo",
+      "country": "Egypt",
+      "region": "Africa",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "GLC Paints",
+      "city": "Cairo",
+      "country": "Egypt",
+      "region": "Africa",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Scib Paints (Asian Paints)",
+      "city": "Cairo",
+      "country": "Egypt",
+      "region": "Africa",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Kansai Plascon South Africa",
+      "city": "Johannesburg",
+      "country": "South Africa",
+      "region": "Africa",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "Duram (Sherwin-Williams)",
+      "city": "Cape Town",
+      "country": "South Africa",
+      "region": "Africa",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Senmin International",
+      "city": "Sasolburg",
+      "country": "South Africa",
+      "region": "Africa",
+      "sector": "Mining chemicals",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "MIBC flotation frother feedstock - mining reagent chain",
+      "buyer_type": "Formulator",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "Axis House",
+      "city": "Cape Town",
+      "country": "South Africa",
+      "region": "Africa",
+      "sector": "Mining chemicals",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "MIBC flotation frother feedstock - mining reagent chain",
+      "buyer_type": "Formulator",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "Betachem",
+      "city": "Durban",
+      "country": "South Africa",
+      "region": "Africa",
+      "sector": "Mining chemicals",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "MIBC flotation frother feedstock - mining reagent chain",
+      "buyer_type": "Formulator",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Colorado SA",
+      "city": "Casablanca",
+      "country": "Morocco",
+      "region": "Africa",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Astral Paints",
+      "city": "Casablanca",
+      "country": "Morocco",
+      "region": "Africa",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "C",
+      "origin": "global"
+    },
+    {
+      "company": "Berger Paints Nigeria",
+      "city": "Lagos",
+      "country": "Nigeria",
+      "region": "Africa",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "CAP Plc (Portland Paints)",
+      "city": "Lagos",
+      "country": "Nigeria",
+      "region": "Africa",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "C",
+      "origin": "global"
+    },
+    {
+      "company": "Crown Paints Kenya",
+      "city": "Nairobi",
+      "country": "Kenya",
+      "region": "Africa",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Basco Paints",
+      "city": "Nairobi",
+      "country": "Kenya",
+      "region": "Africa",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "C",
+      "origin": "global"
+    },
+    {
+      "company": "IVM Chemicals (Milesi)",
+      "city": "Parona",
+      "country": "Italy",
+      "region": "Europe",
+      "sector": "Wood coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "NC wood lacquer solvent - the most MIBK-intensive coating segment",
+      "buyer_type": "End user",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "ICA Group",
+      "city": "Civitanova Marche",
+      "country": "Italy",
+      "region": "Europe",
+      "sector": "Wood coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "NC wood lacquer solvent - the most MIBK-intensive coating segment",
+      "buyer_type": "End user",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "Sirca S.p.A.",
+      "city": "Vicenza",
+      "country": "Italy",
+      "region": "Europe",
+      "sector": "Wood coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "NC wood lacquer solvent - the most MIBK-intensive coating segment",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Boero Bartolomeo",
+      "city": "Genoa",
+      "country": "Italy",
+      "region": "Europe",
+      "sector": "Marine & protective coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Marine/protective coating solvent blends",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Renner Italia",
+      "city": "Bologna",
+      "country": "Italy",
+      "region": "Europe",
+      "sector": "Wood coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "NC wood lacquer solvent - the most MIBK-intensive coating segment",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Barpimo S.A.",
+      "city": "Logrono",
+      "country": "Spain",
+      "region": "Europe",
+      "sector": "Wood coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "NC wood lacquer solvent - the most MIBK-intensive coating segment",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Industrias Titan",
+      "city": "Barcelona",
+      "country": "Spain",
+      "region": "Europe",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Valresa Coatings",
+      "city": "Valencia",
+      "country": "Spain",
+      "region": "Europe",
+      "sector": "Wood coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "NC wood lacquer solvent - the most MIBK-intensive coating segment",
+      "buyer_type": "End user",
+      "priority": "C",
+      "origin": "global"
+    },
+    {
+      "company": "CIN Corporacion Industrial",
+      "city": "Maia",
+      "country": "Portugal",
+      "region": "Europe",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Sniezka S.A.",
+      "city": "Lubzina",
+      "country": "Poland",
+      "region": "Europe",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Tikkurila Polska",
+      "city": "Debica",
+      "country": "Poland",
+      "region": "Europe",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "C",
+      "origin": "global"
+    },
+    {
+      "company": "Sherwin-Williams",
+      "city": "Cleveland, OH",
+      "country": "USA",
+      "region": "North America",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "PPG Industries",
+      "city": "Pittsburgh, PA",
+      "country": "USA",
+      "region": "North America",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "RPM International",
+      "city": "Medina, OH",
+      "country": "USA",
+      "region": "North America",
+      "sector": "Coatings & sealants",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Palmer Holland",
+      "city": "North Olmsted, OH",
+      "country": "USA",
+      "region": "North America",
+      "sector": "Chemical distribution",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Bulk solvent distribution - buys to resell, largest order sizes",
+      "buyer_type": "Distributor",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Charkit Chemical",
+      "city": "Norwalk, CT",
+      "country": "USA",
+      "region": "North America",
+      "sector": "Chemical distribution",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Bulk solvent distribution - buys to resell, largest order sizes",
+      "buyer_type": "Distributor",
+      "priority": "C",
+      "origin": "global"
+    },
+    {
+      "company": "Solvay Mining Solutions (Cytec)",
+      "city": "Tempe, AZ",
+      "country": "USA",
+      "region": "North America",
+      "sector": "Mining chemicals",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "MIBC flotation frother feedstock - mining reagent chain",
+      "buyer_type": "Formulator",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Grupo Pochteca",
+      "city": "Mexico City",
+      "country": "Mexico",
+      "region": "Latin America",
+      "sector": "Chemical distribution",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Bulk solvent distribution - buys to resell, largest order sizes",
+      "buyer_type": "Distributor",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "Quimica Delta",
+      "city": "Mexico City",
+      "country": "Mexico",
+      "region": "Latin America",
+      "sector": "Chemical distribution",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Bulk solvent distribution - buys to resell, largest order sizes",
+      "buyer_type": "Distributor",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Comex (PPG)",
+      "city": "Mexico City",
+      "country": "Mexico",
+      "region": "Latin America",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Pintuco (Grupo Orbis)",
+      "city": "Medellin",
+      "country": "Colombia",
+      "region": "Latin America",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Sinteplast",
+      "city": "Buenos Aires",
+      "country": "Argentina",
+      "region": "Latin America",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "B",
+      "origin": "global"
+    },
+    {
+      "company": "Tersuave",
+      "city": "Cordoba",
+      "country": "Argentina",
+      "region": "Latin America",
+      "sector": "Paints & coatings",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "Nitrocellulose/acrylic lacquer solvent - the largest MIBK end-use",
+      "buyer_type": "End user",
+      "priority": "C",
+      "origin": "global"
+    },
+    {
+      "company": "Orica Chile",
+      "city": "Santiago",
+      "country": "Chile",
+      "region": "Latin America",
+      "sector": "Mining chemicals",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "MIBC flotation frother feedstock - mining reagent chain",
+      "buyer_type": "Formulator",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "Clariant Chile",
+      "city": "Santiago",
+      "country": "Chile",
+      "region": "Latin America",
+      "sector": "Mining chemicals",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "MIBC flotation frother feedstock - mining reagent chain",
+      "buyer_type": "Formulator",
+      "priority": "A",
+      "origin": "global"
+    },
+    {
+      "company": "Quimpac",
+      "city": "Lima",
+      "country": "Peru",
+      "region": "Latin America",
+      "sector": "Chemical manufacturing",
+      "consumption": "",
+      "confidence": "",
+      "use_case": "MIBC flotation frother feedstock - mining reagent chain",
+      "buyer_type": "Distributor",
+      "priority": "B",
+      "origin": "global"
     }
   ]
 }

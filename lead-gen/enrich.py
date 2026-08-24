@@ -68,9 +68,15 @@ EXTRA_COLUMNS = [
     "Notes",
 ]
 
-# Paths worth trying on a corporate site, best first. Portuguese first: the
-# target market is Brazil and pt-BR pages carry the local numbers.
+# Paths worth trying on a corporate site, best first. English first now that the
+# list is worldwide; the pt-BR paths still serve the Brazilian entries.
 CONTACT_PATHS = [
+    "/contact",
+    "/contact-us",
+    "/en/contact",
+    "/procurement",
+    "/suppliers",
+    "/purchasing",
     "/contato",
     "/fale-conosco",
     "/pt-br/contato",
@@ -80,19 +86,17 @@ CONTACT_PATHS = [
     "/fornecedores",
     "/compras",
     "/pt-br/fornecedores",
-    "/contact",
-    "/contact-us",
-    "/en/contact",
-    "/suppliers",
-    "/procurement",
     "/about/contact",
 ]
 
 EMAIL_RE = re.compile(r"[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}")
-# Brazilian formats: (11) 3177-7208, +55 11 91234-5678, 0800 702 4037
+# International: +971 4 4179300, +62 21 8066 0777, (11) 3177-7208, 0800 702 4037.
+# The list is worldwide now, so a Brazil-only pattern would miss most numbers.
 PHONE_RE = re.compile(
-    r"(?:\+55[\s.\-]?)?(?:\(?\d{2}\)?[\s.\-]?)?(?:0800[\s.\-]?\d{3}[\s.\-]?\d{4}"
-    r"|9?\d{4}[\s.\-]\d{4})"
+    r"(?:\+\d{1,3}[\s.\-]?)?"          # optional country code
+    r"(?:\(?\d{1,4}\)?[\s.\-]?)?"      # optional area code
+    r"\d{3,4}[\s.\-]?\d{3,4}"          # subscriber number
+    r"(?:[\s.\-]?\d{2,4})?"            # optional trailing block
 )
 
 # Mailbox scoring. Higher = closer to someone who signs a purchase order.
@@ -309,8 +313,8 @@ def write_xlsx(payload: dict, results: dict[str, Contact]) -> None:
     style_header(ws)
 
     intel = wb.create_sheet("Lead Intel")
-    intel.append(["Company Name", "Priority", "Buyer Type", "MIBK Use Case", "Website",
-                  "HSN Code", "All Emails Found", "Contact Quality", "Data Source", "Notes"])
+    intel.append(["Company Name", "Region", "Country", "Priority", "Buyer Type", "MIBK Use Case",
+                  "Website", "HSN Code", "All Emails Found", "Contact Quality", "Data Source", "Notes"])
     style_header(intel)
 
     prio_fill = {
@@ -324,7 +328,7 @@ def write_xlsx(payload: dict, results: dict[str, Contact]) -> None:
         ws.append([
             lead["company"],
             lead.get("city", ""),
-            "Brazil",
+            lead.get("country", ""),
             lead.get("sector", ""),
             lead.get("consumption", ""),
             lead.get("confidence", ""),
@@ -335,6 +339,8 @@ def write_xlsx(payload: dict, results: dict[str, Contact]) -> None:
         ])
         intel.append([
             lead["company"],
+            lead.get("region", ""),
+            lead.get("country", ""),
             lead.get("priority", ""),
             lead.get("buyer_type", ""),
             lead.get("use_case", ""),
@@ -346,11 +352,11 @@ def write_xlsx(payload: dict, results: dict[str, Contact]) -> None:
             lead.get("notes", ""),
         ])
         if lead.get("priority") in prio_fill:
-            intel.cell(row=intel.max_row, column=2).fill = prio_fill[lead["priority"]]
+            intel.cell(row=intel.max_row, column=4).fill = prio_fill[lead["priority"]]
 
     for i, w in enumerate([34, 22, 10, 32, 22, 12, 22, 22, 36, 26], 1):
         ws.column_dimensions[openpyxl.utils.get_column_letter(i)].width = w
-    for i, w in enumerate([34, 8, 22, 48, 24, 12, 46, 34, 30, 44], 1):
+    for i, w in enumerate([34, 15, 16, 8, 22, 48, 24, 12, 46, 34, 30, 44], 1):
         intel.column_dimensions[openpyxl.utils.get_column_letter(i)].width = w
     for sheet in (ws, intel):
         sheet.freeze_panes = "A2"
