@@ -1,0 +1,2 @@
+crawl4ai>=0.6.0
+openpyxl>=3.1.0
