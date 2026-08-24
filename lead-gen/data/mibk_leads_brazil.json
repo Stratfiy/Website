@@ -10,7 +10,8 @@
   "meta": {
     "note": "Consumption figures are ANALYST ESTIMATES derived from sector, plant scale and MIBK intensity of the end-use process - not verified purchase data. The 'confidence' field grades them. Contact fields are intentionally EMPTY where unverified; run enrich.py to populate them. Never send an offer against an unverified contact.",
     "city_basis": "Primary Brazilian plant or head-office location from public company information. Verify before use.",
-    "generated": "2026-08-24"
+    "generated": "2026-08-24",
+    "cnpj_note": "Add a 'cnpj' to any lead to unlock free Receita Federal enrichment via free_enrich.py --cnpj. Look CNPJs up at https://opencnpj.org."
   },
   "leads": [
     {
@@ -24,7 +25,9 @@
       "buyer_type": "End user",
       "priority": "A",
       "origin": "original",
-      "city_source": "Google Maps (verified)"
+      "city_source": "Google Maps (verified)",
+      "cnpj": "43.996.693/0001-27",
+      "cnpj_source": "public CNPJ registry listing"
     },
     {
       "company": "Sherwin-Williams Brasil",
@@ -288,7 +291,9 @@
       "origin": "original",
       "phone": "+55 11 3177-6102",
       "phone_source": "Google Maps (verified)",
-      "city_source": "Google Maps (verified)"
+      "city_source": "Google Maps (verified)",
+      "cnpj": "62.545.686/0001-53",
+      "cnpj_source": "public CNPJ registry listing"
     },
     {
       "company": "Elekeiroz",
