@@ -122,3 +122,7 @@ footer .legal{font-size:13px;line-height:1.6;margin-top:14px;max-width:72em;colo
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 @media (max-width:900px){.three,.tiers{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.strip{grid-template-columns:1fr}.tier p.for{min-height:0}form{grid-template-columns:1fr}}
+
+footer details.legal{margin-top:14px}
+footer details.legal summary{cursor:pointer;display:inline-block;font-size:13px;text-decoration:underline;text-underline-offset:3px}
+footer details.legal p{margin:10px 0 0;line-height:1.7}
