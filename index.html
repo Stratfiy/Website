@@ -303,6 +303,23 @@ body{font-family:'Mona Sans',sans-serif}
 footer{flex-direction:column;gap:14px}
 footer .legal{font-size:13px;line-height:1.6;color:#7C7F85;max-width:70em}
 footer .frow{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+/* tiers as plan cards */
+.tx{gap:clamp(28px,4vw,64px);margin-top:clamp(48px,8vh,96px)}
+.tx article,.tx article+article{padding:0!important;display:flex;flex-direction:column}
+.tx h3.tx-name{font-size:clamp(24px,2.2vw,32px);font-weight:600;letter-spacing:-.01em;text-transform:none;color:#fff;margin:0 0 10px;font-stretch:110%}
+.tx p.tx-for{font-size:16px;line-height:1.45;color:var(--mute);margin:0;min-height:2.9em;max-width:30ch}
+.tx-num{font-size:clamp(56px,6.4vw,104px);margin:28px 0 28px}
+.tx-cta{display:block;text-align:center;border:1px solid #4A4A4A;border-radius:6px;padding:13px 18px;font-size:15px;font-weight:600;color:#fff;text-decoration:none;transition:background .2s,color .2s,border-color .2s}
+.tx-cta:hover,.tx-cta:focus-visible{background:#fff;color:#000;border-color:#fff}
+.tx article:nth-child(2) .tx-cta{background:#fff;color:#000;border-color:#fff}
+.tx article:nth-child(2) .tx-cta:hover{background:#D9D9D9;border-color:#D9D9D9}
+.tx-list{list-style:none;margin:30px 0 0;padding:0;font-size:16px;line-height:1.45}
+.tx-list li{position:relative;padding:0 0 12px 26px;color:#E4E4E4}
+.tx-list li::before{content:"";position:absolute;left:2px;top:.42em;width:10px;height:5px;border-left:1.5px solid #9A9A9A;border-bottom:1.5px solid #9A9A9A;transform:rotate(-45deg)}
+.tx-list li.h{padding-left:0;color:var(--mute)}
+.tx-list li.h::before{display:none}
+@media (max-width:900px){.tx article+article{margin-top:56px!important}.tx p.tx-for{min-height:0}}
 </style>
 </head>
 <body>
@@ -365,9 +382,42 @@ footer .frow{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       <h2 class="rv">Three tiers.<br>Measured in microns.</h2>
     </div>
     <div class="tx">
-      <article class="rv"><span class="tx-name">Standard</span><div class="tx-num">±100<i>µm</i></div><p>10–12 working days</p><p class="m">Sampled every batch</p></article>
-      <article class="rv"><span class="tx-name">Precision</span><div class="tx-num">±25<i>µm</i></div><p>15–17 working days</p><p class="m">Critical features, every part</p></article>
-      <article class="rv"><span class="tx-name">Special</span><div class="tx-num">≈10<i>µm</i></div><p>Quoted per part</p><p class="m">To your GD&amp;T</p></article>
+      <article class="rv">
+        <h3 class="tx-name">Standard</h3>
+        <p class="tx-for">For housings, brackets, covers and general machined parts.</p>
+        <div class="tx-num">±100<i>µm</i></div>
+        <a class="tx-cta" href="#quote" data-tier="0">Quote Standard</a>
+        <ul class="tx-list">
+          <li>10–12 working days</li>
+          <li>Sample inspection on every batch</li>
+          <li>Inspection report with measured values</li>
+          <li>Material certificate and certificate of conformance</li>
+        </ul>
+      </article>
+      <article class="rv">
+        <h3 class="tx-name">Precision</h3>
+        <p class="tx-for">For fits, bores and the features your assembly depends on.</p>
+        <div class="tx-num">±25<i>µm</i></div>
+        <a class="tx-cta" href="#quote" data-tier="1">Quote Precision</a>
+        <ul class="tx-list">
+          <li class="h">Everything in Standard, and:</li>
+          <li>15–17 working days</li>
+          <li>Critical features measured on every part</li>
+          <li>First article report before the batch runs</li>
+        </ul>
+      </article>
+      <article class="rv">
+        <h3 class="tx-name">Special</h3>
+        <p class="tx-for">For features tighter than ±25 µm, down to about 10 µm.</p>
+        <div class="tx-num">≈10<i>µm</i></div>
+        <a class="tx-cta" href="#quote" data-tier="2">Quote Special</a>
+        <ul class="tx-list">
+          <li class="h">Everything in Precision, and:</li>
+          <li>Quoted per part, after we review your GD&amp;T</li>
+          <li>Inspection plan agreed with you before we cut</li>
+          <li>Lead time confirmed with the quote</li>
+        </ul>
+      </article>
     </div>
     <p class="sx-note rv">Lead times are production days, before shipping.</p>
   </section>
@@ -508,6 +558,8 @@ footer .frow{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     document.getElementById('next').value=location.origin+'/thanks.html';
   });
 })();
+
+  document.querySelectorAll('.tx-cta').forEach(a=>a.addEventListener('click',()=>{const r=document.querySelectorAll('input[name="tier"]')[+a.dataset.tier];if(r)r.checked=true;}));
 </script>
 </body>
 </html>
