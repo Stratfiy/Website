@@ -320,6 +320,32 @@ footer .frow{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .tx-list li.h{padding-left:0;color:var(--mute)}
 .tx-list li.h::before{display:none}
 @media (max-width:900px){.tx article+article{margin-top:56px!important}.tx p.tx-for{min-height:0}}
+
+/* short home page */
+.platform{min-height:0;padding:clamp(72px,13vh,140px) var(--pad)}
+.model,.sx,.band{padding-top:clamp(56px,9vh,104px)!important;padding-bottom:clamp(56px,9vh,104px)!important}
+.tri{margin-top:clamp(28px,4vh,48px)}
+.tri .clip{aspect-ratio:16/9;margin-bottom:16px}
+.tri .n{display:none}
+.tri h3{margin-bottom:8px}.tri p{font-size:16px}
+.tx{margin-top:clamp(32px,5vh,56px)}
+.tx-num{font-size:clamp(48px,5vw,80px);margin:18px 0 20px}
+.tx p.tx-for{min-height:0;max-width:none}
+.tx-cta{padding:11px 18px}
+.tx-list{margin-top:20px;font-size:15px}.tx-list li{padding-bottom:8px}
+.sx-note{margin-top:20px}
+.steps2{margin-top:clamp(32px,5vh,56px)}
+.steps2 span{font-size:clamp(32px,3.2vw,48px);margin-bottom:14px}
+.proofrow{display:flex;gap:16px 40px;flex-wrap:wrap;align-items:baseline;margin-top:clamp(36px,6vh,64px)}
+.proofrow p{font-family:'Mona Sans',sans-serif;font-stretch:112%;font-weight:600;font-size:clamp(20px,1.8vw,26px);letter-spacing:-.02em;margin:0;color:#fff}
+.proofrow ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 28px;color:var(--mute);font-size:16px}
+.quote-grid{margin-top:clamp(24px,4vh,40px);grid-template-columns:.6fr 1.4fr}
+form{gap:14px 20px;grid-template-columns:repeat(4,1fr)}
+form>label{grid-column:span 2}form>label.full,form>.full,form>.form-foot,form>.sent{grid-column:1/-1}
+.contact div{padding:8px 0}.contact b{font-size:16px}
+.drop-in{padding:16px 18px}
+textarea{min-height:0;height:44px}
+@media (max-width:900px){form{grid-template-columns:1fr 1fr}.quote-grid{grid-template-columns:1fr}.tri .clip{aspect-ratio:16/9}}
 </style>
 </head>
 <body>
@@ -331,8 +357,8 @@ footer .frow{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     <div class="links">
       <a class="plain" href="#model">What we build</a>
       <a class="plain" href="#tiers">Tolerances</a>
-      <a class="plain" href="#proof">Quality</a>
-      <a class="plain" href="#faq">FAQ</a>
+      <a class="plain" href="#how">How it works</a>
+      <a class="plain" href="/faq">FAQ</a>
       <a class="plain" href="https://app.ordershed.com">Log in</a>
       <a class="cta" href="#quote">Get a quote</a>
     </div>
@@ -346,10 +372,6 @@ footer .frow{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 </header>
 
 <main>
-  <section class="vband" aria-label="A steel shaft being turned on a CNC lathe">
-    <video class="vbg" autoplay muted loop playsinline preload="metadata" poster="turning.jpg"><source src="turning.mp4" type="video/mp4"></video>
-  </section>
-
   <section class="platform dark" id="platform">
     <video class="vbg" autoplay muted loop playsinline preload="metadata" poster="coolant.jpg"><source src="coolant.mp4" type="video/mp4"></video>
     <p class="kicker rv">The OrderShed platform</p>
@@ -369,12 +391,6 @@ footer .frow{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
         <span class="n">03</span><h3>Factories as a service</h3><p>Complete component and assembly lines, designed and run by us in India, with robots, conveyors and tray-carrying robots doing the repetitive work.</p></li>
     </ul>
   </section>
-
-  <section class="vband" aria-label="Autonomous tray-carrying robots moving parts across a factory floor">
-    <video class="vbg" autoplay muted loop playsinline preload="metadata" poster="floor.jpg"><source src="floor.mp4" type="video/mp4"></video>
-  </section>
-
-  <div class="marquee" aria-hidden="true"><div><span>Made the same, every time</span><span>Measured in microns</span><span>One partner, end to end</span><span>Made the same, every time</span><span>Measured in microns</span><span>One partner, end to end</span></div></div>
 
   <section class="sx" id="tiers">
     <div class="sx-head">
@@ -419,23 +435,7 @@ footer .frow{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
         </ul>
       </article>
     </div>
-    <p class="sx-note rv">Lead times are production days, before shipping.</p>
-  </section>
-
-  <section class="split" id="proof">
-    <div class="split-media"><video autoplay muted loop playsinline preload="metadata" poster="turning.jpg"><source src="turning.mp4" type="video/mp4"></video></div>
-    <div class="split-body">
-      <p class="kicker rv">Quality</p>
-      <h2 class="rv">Every box carries its proof.</h2>
-      <p class="lede rv">Measured values in microns, in the same format every time.</p>
-      <ol class="docs2">
-        <li class="rv">Inspection report</li>
-        <li class="rv">Certificate of conformance</li>
-        <li class="rv">Material certificate</li>
-        <li class="rv">First article report</li>
-        <li class="rv">Export papers</li>
-      </ol>
-    </div>
+    <p class="sx-note rv">Lead times are production days, before shipping. Sourced locally, from India.</p>
   </section>
 
   <section class="sx" id="how">
@@ -449,31 +449,10 @@ footer .frow{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       <li class="rv"><span>03</span><h3>We make and check</h3><p>Made in our network, inspected to your tier.</p></li>
       <li class="rv"><span>04</span><h3>Delivered</h3><p>To your door, with every document.</p></li>
     </ol>
-  </section>
-
-  <section class="panel dark" id="network">
-    <video class="vbg" autoplay muted loop playsinline preload="metadata" poster="conveyor.jpg"><source src="conveyor.mp4" type="video/mp4"></video>
-    <p class="kicker">Our network</p>
-    <div class="places rv"><span>Sourced locally.</span><span>From India.</span></div>
-    <ul class="trio">
-      <li class="rv"><h3>Vetted first</h3><p>Every shop audited before it makes a part.</p></li>
-      <li class="rv"><h3>Paid first</h3><p>Better, faster pay, so your job runs first.</p></li>
-      <li class="rv"><h3>Checked before dispatch</h3><p>Nothing ships without its report.</p></li>
-    </ul>
-  </section>
-
-  <section class="sx" id="faq">
-    <div class="faq-grid">
-      <div><p class="kicker rv">Questions</p><h2 class="rv">Before you send a drawing.</h2></div>
-      <div class="faq2">
-        <details><summary>Who do we contract with?</summary><p>NAutomation Labs Private Limited, India. We quote, take your PO, invoice and handle export. One company, start to finish.</p></details>
-        <details><summary>What quantities do you take?</summary><p>From samples to production batches in the thousands, and blanket orders with scheduled releases.</p></details>
-        <details><summary>Who actually makes my part?</summary><p>An audited shop in our network. Your contract, guarantee and documents all come from OrderShed.</p></details>
-        <details><summary>How do shipping and duty work?</summary><p>We quote delivered to your door (DAP) in euros. Import duty is paid by you at the current rate.</p></details>
-        <details><summary>Is my drawing safe?</summary><p>We sign a mutual NDA first, and every shop is barred by agreement from dealing with you directly.</p></details>
-      </div>
+    <div class="proofrow rv" id="proof">
+      <p>Every box carries its proof.</p>
+      <ul><li>Inspection report</li><li>Certificate of conformance</li><li>Material certificate</li><li>First article report</li><li>Export papers</li></ul>
     </div>
-    <div class="sister2 rv"><p><b>Part of NAutomation Labs.</b> Our robotics team, nA labs, builds robots that tend machines like these.</p><a class="btn" href="https://nautomationlabs.com">Visit nA labs</a></div>
   </section>
 
   <section class="band dark" id="quote">
@@ -526,7 +505,7 @@ footer .frow{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 <footer>
   <div class="frow">
     <span>OrderShed is the parts business of NAutomation Labs Private Limited. Footage is illustrative.</span>
-    <nav aria-label="Footer"><a href="#model">What we build</a><a href="#tiers">Tolerances</a><a href="#proof">Quality</a><a href="#faq">FAQ</a><a href="#quote">Quote</a></nav>
+    <nav aria-label="Footer"><a href="#model">What we build</a><a href="#tiers">Tolerances</a><a href="#how">How it works</a><a href="/faq">FAQ</a><a href="https://nautomationlabs.com">nA labs</a><a href="#quote">Quote</a></nav>
   </div>
   <p class="legal">NAutomation Labs Private Limited · CIN U62011TZ2026PTC039414 · GSTIN 33AALCN7211L1ZB · Registered office: No. 86/16, Papanna Thottam, Brindhavan Nagar, TNHB Phase 7, Hosur, Krishnagiri 635109, Tamil Nadu, India · Phone +91 73388 71878 · Email office@nautomationlabs.com · Queries and grievances: Nithish Kalyan, Director</p>
 </footer>
