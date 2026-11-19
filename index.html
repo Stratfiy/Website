@@ -3,468 +3,78 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OrderShed — Precision production, built in India</title>
-<meta name="description" content="CNC machined parts for European engineering teams. Made in vetted partner shops in India, measured in microns, documented with every batch.">
-<style>
-@font-face{font-family:'Barlow Condensed';font-weight:500;font-display:swap;src:url('fonts/barlow-condensed-latin-500-normal.woff2') format('woff2')}
-@font-face{font-family:'Barlow Condensed';font-weight:600;font-display:swap;src:url('fonts/barlow-condensed-latin-600-normal.woff2') format('woff2')}
-@font-face{font-family:'Barlow Condensed';font-weight:700;font-display:swap;src:url('fonts/barlow-condensed-latin-700-normal.woff2') format('woff2')}
-@font-face{font-family:'Barlow';font-weight:400;font-display:swap;src:url('fonts/barlow-latin-400-normal.woff2') format('woff2')}
-@font-face{font-family:'Barlow';font-weight:500;font-display:swap;src:url('fonts/barlow-latin-500-normal.woff2') format('woff2')}
-@font-face{font-family:'Barlow';font-weight:600;font-display:swap;src:url('fonts/barlow-latin-600-normal.woff2') format('woff2')}
-:root{--night:#16171A;--ink:#111;--paper:#EDEDED;--mute:#A8A8A8;--soft:#C4C4C4;--line:#2E2E2E;--pad:clamp(20px,5vw,64px);--cond:'Barlow Condensed','Arial Narrow',sans-serif}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--night);color:#fff;font-family:'Barlow','Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased}
-a{color:inherit}
-a:focus-visible,button:focus-visible{outline:3px solid #CFCFCF;outline-offset:3px}
-img{display:block;max-width:100%}
-p{margin:0}
-h1,h2,h3{margin:0}
-
-/* nav */
-.nav{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:clamp(18px,3vw,32px) var(--pad)}
-.mark{font-family:var(--cond);font-weight:700;font-size:22px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none}
-.links{display:flex;align-items:center;gap:clamp(20px,3vw,40px);font-size:15px;font-weight:500;letter-spacing:0;text-transform:none}
-.links a{text-decoration:none;padding:12px 0;white-space:nowrap}
-.links a:hover{color:#CFCFCF}
-.links a.cta{background:#fff;color:#000;padding:13px 22px;border-radius:4px}
-.links a.cta:hover{background:#CFCFCF}
-@media (max-width:760px){.links a.plain{display:none}}
-
-/* hero */
-.hero{position:relative;overflow:hidden;height:100vh;height:100svh;min-height:640px;display:flex;flex-direction:column;background:#050505}
-.head{position:relative;z-index:2;text-align:center;padding:clamp(96px,15vh,150px) var(--pad) 0}
-.word{font-family:var(--cond);font-weight:700;text-transform:uppercase;font-size:clamp(64px,13.5vw,210px);line-height:.82;letter-spacing:.01em}
-.head h1{margin:clamp(18px,3vh,30px) auto 0;font-size:clamp(20px,2.4vw,32px);line-height:1.2;font-weight:600;max-width:20em}
-.head p{margin:12px auto 0;font-size:17px;line-height:1.45;color:var(--soft);max-width:31em}
-.scene{position:relative;z-index:1;flex:1;min-height:0}
-.scene img{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:118%;width:auto;max-width:none;
-  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 45%),linear-gradient(90deg,transparent 0,#000 26%,#000 74%,transparent 100%);-webkit-mask-composite:source-in;
-  mask-image:linear-gradient(180deg,transparent 0,#000 45%),linear-gradient(90deg,transparent 0,#000 26%,#000 74%,transparent 100%);mask-composite:intersect}
-@media (max-width:760px){.scene img{height:auto;width:170vw}}
-.note{position:absolute;right:var(--pad);bottom:14px;z-index:3;font-size:13px;color:#8C8C8C}
-
-/* panels */
-.panel{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:clamp(64px,10vh,120px) var(--pad);position:relative}
-.panel h2,.band h2{font-family:var(--cond);font-size:clamp(40px,7vw,104px);line-height:.95;font-weight:700;text-transform:uppercase;letter-spacing:.005em;max-width:12em}
-.lede{margin-top:clamp(16px,2.6vh,28px);font-size:clamp(17px,1.6vw,21px);line-height:1.45;max-width:34em}
-.dark{background:var(--night);color:#fff}.dark .lede{color:var(--soft)}
-.light{background:var(--paper);color:var(--ink)}.light .lede{color:#3E3E3E}
-.kicker{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:22px}
-.light .kicker{color:#6B6B6B}
-
-/* full-bleed image panel */
-.bleed{padding:0;overflow:hidden;justify-content:flex-end}
-.bleed img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 50%}
-.bleed::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(22,23,26,.92) 0%,rgba(22,23,26,.55) 42%,rgba(22,23,26,0) 70%),linear-gradient(0deg,rgba(22,23,26,.9) 0%,transparent 40%)}
-.bleed .txt{position:relative;z-index:2;padding:0 var(--pad) clamp(56px,10vh,110px)}
-@media (max-width:760px){.bleed::after{background:linear-gradient(0deg,rgba(22,23,26,.95) 0%,rgba(22,23,26,.6) 55%,rgba(22,23,26,.1) 100%)}}
-
-/* columns */
-.cols{list-style:none;margin:clamp(36px,7vh,80px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr)}
-.cols.four{grid-template-columns:repeat(4,1fr)}
-.cols li{padding:20px clamp(16px,2.4vw,36px) 0 0;border-top:3px solid currentColor}
-.cols li+li{padding-left:clamp(16px,2.4vw,36px);border-left:1px solid #CFCFCF}
-.dark .cols li+li{border-left-color:var(--line)}
-.cols h3{margin:0 0 8px;font-size:clamp(19px,1.7vw,24px);font-weight:600}
-.cols p{font-size:16px;line-height:1.45}
-.dark .cols p{color:var(--soft)}.light .cols p{color:#3E3E3E}
-.cols .n{display:block;margin-bottom:14px;font-size:15px;font-weight:600;color:#6B6B6B}
-.dark .cols .n{color:var(--mute)}
-@media (max-width:900px){.cols,.cols.four{grid-template-columns:1fr}.cols li{padding-right:0}.cols li+li{padding-left:0;border-left:0;margin-top:26px}}
-
-/* tiers */
-.tiers{list-style:none;margin:clamp(40px,8vh,88px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr)}
-.tiers li{border-top:3px solid var(--ink);padding:18px clamp(16px,2.4vw,36px) 0 0}
-.tiers li+li{padding-left:clamp(16px,2.4vw,36px);border-left:1px solid #CFCFCF}
-.tiers .name{font-size:15px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6B6B6B}
-.tiers .num{font-family:var(--cond);font-weight:700;font-size:clamp(72px,10vw,150px);line-height:.9;margin:14px 0 6px;letter-spacing:-.01em}
-.tiers .num small{font-size:.32em;font-weight:600;margin-left:6px;letter-spacing:0}
-.tiers dl{margin:18px 0 0;display:grid;grid-template-columns:auto 1fr;gap:8px 18px;font-size:16px}
-.tiers dt{color:#6B6B6B}
-.tiers dd{margin:0}
-@media (max-width:900px){.tiers{grid-template-columns:1fr}.tiers li+li{padding-left:0;border-left:0;margin-top:36px}}
-
-/* parts lineup */
-.lineup{list-style:none;margin:clamp(28px,5vh,56px) calc(-1*var(--pad)) 0;padding:0 var(--pad);display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,2vw,28px)}
-.lineup img{width:100%;height:auto;aspect-ratio:720/920;object-fit:cover}
-.lineup h3{margin:14px 0 4px;font-size:clamp(19px,1.7vw,24px);font-weight:600}
-.lineup .n{display:block;margin-bottom:8px;font-size:15px;font-weight:600;color:var(--mute)}
-.lineup p{font-size:16px;line-height:1.45;color:var(--soft)}
-.fine{margin-top:22px;font-size:14px;color:var(--mute);max-width:60em;line-height:1.5}
-@media (max-width:1000px){.lineup{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;scrollbar-width:none}.lineup::-webkit-scrollbar{display:none}.lineup li{flex:0 0 min(72vw,320px);scroll-snap-align:center}}
-
-/* proof */
-.proof{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,96px);align-items:center}
-.sheet{background:#fff;color:var(--ink);border:1px solid #BDBDBD;font-size:12.5px;box-shadow:0 40px 80px -40px rgba(0,0,0,.35)}
-.sheet .top{display:flex;justify-content:space-between;align-items:flex-end;padding:18px 20px;border-bottom:2px solid var(--ink)}
-.sheet .t{font-family:var(--cond);font-weight:700;font-size:20px;letter-spacing:.06em;text-transform:uppercase}
-.sheet .r{text-align:right;color:#6B6B6B;font-size:12px;line-height:1.4}
-.sheet .meta{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #D4D4D4}
-.sheet .meta div{padding:10px 12px;border-right:1px solid #E2E2E2}.sheet .meta div:last-child{border-right:0}
-.sheet .meta i{display:block;font-style:normal;color:#8A8A8A;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px}
-.sheet table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
-.sheet th,.sheet td{padding:9px 12px;text-align:left;border-bottom:1px solid #EBEBEB}
-.sheet th{font-weight:600;color:#8A8A8A;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase}
-.sheet td:last-child{font-weight:600}
-.sheet .foot{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;color:#6B6B6B}
-.stamp{border:1.5px solid var(--ink);color:var(--ink);padding:4px 10px;font-weight:600;letter-spacing:.14em;font-size:11px}
-.docs{list-style:none;margin:clamp(28px,5vh,48px) 0 0;padding:0;border-top:3px solid var(--ink)}
-.docs li{display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-bottom:1px solid #CFCFCF;font-size:17px}
-.docs li span{color:#6B6B6B;font-size:15px;text-align:right}
-@media (max-width:900px){.proof{grid-template-columns:1fr}.sheet{overflow-x:auto}.docs li{flex-direction:column;gap:2px}.docs li span{text-align:left}}
-
-/* network */
-.places{font-size:clamp(56px,10vw,160px)!important;font-family:var(--cond);font-weight:700;text-transform:uppercase;font-size:clamp(64px,13vw,200px);line-height:.86;letter-spacing:.005em}
-.places span{display:block}
-.places span:last-child{color:#8A8A8A}
-
-/* sister + faq + quote */
-.band{padding:clamp(72px,12vh,128px) var(--pad)}
-.sister{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end;border-top:3px solid var(--ink);padding-top:28px;margin-top:clamp(40px,7vh,80px)}
-.sister p{font-size:clamp(17px,1.5vw,20px);line-height:1.45;max-width:36em;color:#3E3E3E}
-.sister p b{color:var(--ink);font-weight:600}
-.btn{display:inline-block;text-decoration:none;font-size:15px;font-weight:600;letter-spacing:0;text-transform:none;padding:14px 24px;border-radius:4px;border:1px solid currentColor;background:transparent;cursor:pointer;font-family:inherit;white-space:nowrap}
-.btn.solid{background:var(--ink);color:#fff;border-color:var(--ink)}
-.dark .btn.solid{background:#fff;color:#000;border-color:#fff}
-.btn:hover{opacity:.82}
-@media (max-width:760px){.sister{grid-template-columns:1fr}}
-.faq{margin-top:clamp(36px,6vh,64px);border-top:3px solid var(--ink);max-width:980px}
-.faq details{border-bottom:1px solid #CFCFCF}
-.faq summary{list-style:none;cursor:pointer;padding:22px 44px 22px 0;font-size:clamp(18px,1.6vw,22px);font-weight:600;position:relative}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"";position:absolute;right:6px;top:50%;width:14px;height:14px;margin-top:-7px;background:linear-gradient(currentColor,currentColor) center/14px 2px no-repeat,linear-gradient(currentColor,currentColor) center/2px 14px no-repeat;transition:transform .25s}
-.faq details[open] summary::after{transform:rotate(45deg)}
-.faq details p{padding:0 0 24px;color:#3E3E3E;font-size:17px;line-height:1.5;max-width:44em}
-
-.quote-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,6vw,96px);margin-top:clamp(36px,6vh,64px)}
-.contact{border-top:3px solid #fff}
-.contact div{padding:16px 0;border-bottom:1px solid var(--line)}
-.contact i{display:block;font-style:normal;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin-bottom:4px}
-.contact b{font-weight:500;font-size:18px}
-form{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-label{display:flex;flex-direction:column;gap:8px;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
-label.full{grid-column:1/-1}
-input,select,textarea{font:inherit;font-size:17px;letter-spacing:0;text-transform:none;color:#fff;background:transparent;border:0;border-bottom:1px solid #4A4A4A;border-radius:0;padding:10px 0}
-select option{color:#000}
-input:focus,select:focus,textarea:focus{outline:0;border-bottom-color:#fff}
-textarea{min-height:90px;resize:vertical}
-.tierpick{display:flex;gap:8px;flex-wrap:wrap}
-.tierpick label{flex-direction:row;letter-spacing:.06em;color:#fff;cursor:pointer}
-.tierpick input{position:absolute;opacity:0;pointer-events:none}
-.tierpick span{display:block;text-transform:none;letter-spacing:.02em;font-weight:600;border:1px solid #4A4A4A;padding:11px 18px;border-radius:4px;font-size:14px}
-.tierpick input:checked+span{background:#fff;color:#000;border-color:#fff}
-.tierpick input:focus-visible+span{outline:3px solid #CFCFCF;outline-offset:2px}
-.form-foot{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;margin-top:8px}
-.form-foot p{font-size:14px;color:var(--mute);max-width:26em;letter-spacing:0;text-transform:none}
-.sent{grid-column:1/-1;display:none;border-top:3px solid #fff;padding-top:18px}
-.sent.show{display:block}
-.sent pre{white-space:pre-wrap;font-family:inherit;font-size:15px;color:var(--soft);border-left:1px solid #4A4A4A;padding-left:16px;margin:14px 0;max-height:240px;overflow:auto}
-.sent .row{display:flex;gap:10px;flex-wrap:wrap}
-@media (max-width:900px){.quote-grid{grid-template-columns:1fr}form{grid-template-columns:1fr}}
-
-footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;padding:32px var(--pad) 40px;border-top:1px solid var(--line);font-size:14px;color:var(--mute)}
-footer nav{display:flex;gap:22px;flex-wrap:wrap}
-footer a{text-decoration:none}footer a:hover{color:#fff}
-
-.rv{opacity:0;transform:translateY(18px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
-.rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
-@font-face{font-family:'Instrument Serif';font-weight:400;font-style:normal;font-display:swap;src:url('fonts/instrument-serif-latin-400-normal.woff2') format('woff2')}
-@font-face{font-family:'Instrument Sans';font-weight:400;font-style:normal;font-display:swap;src:url('fonts/instrument-sans-latin-400-normal.woff2') format('woff2')}
-@font-face{font-family:'Instrument Sans';font-weight:500;font-style:normal;font-display:swap;src:url('fonts/instrument-sans-latin-500-normal.woff2') format('woff2')}
-@font-face{font-family:'Instrument Sans';font-weight:600;font-style:normal;font-display:swap;src:url('fonts/instrument-sans-latin-600-normal.woff2') format('woff2')}
-.word{text-transform:none}
-.panel h2,.band h2{text-transform:none}
-.places{font-size:clamp(56px,10vw,160px)!important;text-transform:none}
-.sheet .t{text-transform:none;letter-spacing:0}
-body{font-family:'Instrument Sans',sans-serif}
-.word,.panel h2,.band h2,.places,.tiers .num,.sheet .t,.mark{font-family:'Instrument Serif',serif;font-weight:400;letter-spacing:-.02em}
-.word{font-size:clamp(72px,13vw,200px);line-height:.88}
-.panel h2,.band h2{font-size:clamp(44px,6.4vw,96px);line-height:.98;max-width:13em}
-.mark{text-transform:none;letter-spacing:0;font-size:26px}
-.head h1{font-weight:500;letter-spacing:-.01em}
-.tiers .num small{font-family:'Instrument Sans'}
-
-/* video system */
-.vbg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-.hero .vbg{opacity:.78}
-.hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(22,23,26,.55) 0%,rgba(22,23,26,.1) 35%,rgba(22,23,26,.25) 65%,rgba(22,23,26,.95) 100%)}
-.hero .head{position:relative;z-index:2;margin-top:auto;text-align:left;padding:0 var(--pad) clamp(56px,10vh,110px)}
-.hero h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(52px,8.4vw,132px);line-height:.92;letter-spacing:-.02em;max-width:11em;margin:0}
-.hero .sub{margin:22px 0 0;font-size:clamp(18px,1.6vw,22px);color:#D6D6D6;max-width:30em;line-height:1.4}
-.hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
-.hero .ctas a{font-size:15px;font-weight:600;letter-spacing:0;text-transform:none;text-decoration:none;padding:14px 22px;border-radius:4px;border:1px solid #fff}
-.hero .ctas a.solid{background:#fff;color:#000}
-.vtag{position:absolute;right:var(--pad);bottom:14px;z-index:3;font-size:12px;color:#8C8C8C;letter-spacing:.04em}
-.vband{position:relative;height:78vh;min-height:420px;overflow:hidden;background:#000}
-.vband .vbg{opacity:.9}
-.vband::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#16171A 0%,transparent 18%,transparent 82%,#16171A 100%)}
-.platform{position:relative;overflow:hidden;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:clamp(72px,12vh,128px) var(--pad)}
-.platform .vbg{opacity:.32}
-.platform>*:not(.vbg){position:relative;z-index:1}
-.platform h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(44px,6.4vw,96px);line-height:.98;letter-spacing:-.02em;max-width:12em;text-transform:none}
-.platform h2 span{color:#8F8F8F}
-.platform .lede{color:#D0D0D0;max-width:38em}
-.model{background:var(--night);padding:clamp(72px,12vh,128px) var(--pad)}
-.tri{list-style:none;margin:clamp(40px,7vh,72px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,28px)}
-.tri li{border-top:3px solid #fff;padding-top:18px}
-.tri .clip{position:relative;aspect-ratio:4/5;overflow:hidden;background:#111;margin-bottom:22px}
-.tri video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.tri .n{display:block;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:10px}
-.tri h3{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(32px,3vw,46px);line-height:1;letter-spacing:-.01em;margin-bottom:12px}
-.tri p{font-size:17px;line-height:1.45;color:var(--soft);max-width:26em}
-@media (max-width:900px){.tri{grid-template-columns:1fr}.tri .clip{aspect-ratio:16/10}}
-.marquee{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--night);padding:22px 0}
-.marquee div{display:flex;gap:64px;width:max-content;animation:mq 40s linear infinite;font-family:'Instrument Serif',serif;font-size:clamp(28px,3.4vw,48px);color:#D6D6D6;white-space:nowrap}
-.marquee span::after{content:"·";margin-left:64px;color:#555}
-@keyframes mq{to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion:reduce){.marquee div{animation:none}}
-#network{position:relative;overflow:hidden}
-#network .vbg{opacity:.28}
-#network>*:not(.vbg){position:relative;z-index:1}
-@font-face{font-family:'Mona Sans';font-weight:200 900;font-stretch:75% 125%;font-display:swap;src:url('fonts/mona-sans-latin-wdth-normal.woff2') format('woff2')}
-body{font-family:'Mona Sans',sans-serif}
-.hero h1,.platform h2,.model h2,.tri h3,.marquee div,.panel h2,.band h2,.places,.tiers .num,.mark,.sheet .t{font-family:'Mona Sans',sans-serif!important;font-stretch:125%;font-weight:700!important;letter-spacing:-.035em!important}
-.hero h1{font-size:clamp(44px,6.6vw,104px)!important;line-height:.98!important}
-.platform h2,.model h2,.panel h2,.band h2{font-size:clamp(36px,5vw,76px)!important;line-height:1.02!important}
-.tri h3{font-size:clamp(24px,2.2vw,32px)!important}.marquee div{font-size:clamp(22px,2.6vw,36px)!important}
-.mark{font-size:20px!important;letter-spacing:-.02em!important}
-
-/* lower sections v2 */
-.sx{background:var(--night);color:#fff;padding:clamp(96px,16vh,180px) var(--pad);border-top:1px solid var(--line)}
-.sx-head h2,.split h2,.faq-grid h2{font-family:'Mona Sans',sans-serif;font-stretch:125%;font-weight:700;letter-spacing:-.035em;font-size:clamp(40px,5.6vw,88px);line-height:1;margin:0}
-.tx{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(56px,10vh,120px);border-top:1px solid #3A3A3A}
-.tx article{padding:28px clamp(16px,2.4vw,36px) 0 0}
-.tx article+article{padding-left:clamp(16px,2.4vw,36px);border-left:1px solid #2A2A2A}
-.tx-name{font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
-.tx-num{font-family:'Mona Sans',sans-serif;font-stretch:125%;font-weight:700;letter-spacing:-.05em;font-size:clamp(64px,9.5vw,152px);line-height:.9;margin:22px 0 26px}
-.tx-num i{font-style:normal;font-size:.26em;font-weight:500;letter-spacing:0;margin-left:8px;color:var(--mute);font-stretch:100%}
-.tx p{font-size:18px;margin:0 0 4px}.tx p.m{color:var(--mute);font-size:16px}
-.sx-note{margin-top:40px;font-size:14px;color:#6E6E6E}
-@media (max-width:900px){.tx{grid-template-columns:1fr}.tx article+article{padding-left:0;border-left:0;border-top:1px solid #2A2A2A;margin-top:28px}}
-.split{display:grid;grid-template-columns:1fr 1fr;min-height:100svh;background:var(--night);color:#fff}
-.split-media{position:relative;overflow:hidden;min-height:60vh}
-.split-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.split-body{padding:clamp(72px,14vh,160px) var(--pad);display:flex;flex-direction:column;justify-content:center}
-.split .lede{color:var(--soft)}
-.docs2{list-style:none;margin:clamp(40px,7vh,72px) 0 0;padding:0;counter-reset:d;border-top:1px solid #3A3A3A}
-.docs2 li{counter-increment:d;display:flex;align-items:baseline;gap:22px;padding:18px 0;border-bottom:1px solid #2A2A2A;font-family:'Mona Sans',sans-serif;font-stretch:112%;font-weight:600;font-size:clamp(22px,2.2vw,32px);letter-spacing:-.02em}
-.docs2 li::before{content:"0" counter(d);font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--mute);font-stretch:100%;min-width:24px}
-@media (max-width:900px){.split{grid-template-columns:1fr}}
-.steps2{list-style:none;margin:clamp(56px,10vh,120px) 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #3A3A3A}
-.steps2 li{padding:28px clamp(14px,2vw,28px) 0 0}
-.steps2 li+li{padding-left:clamp(14px,2vw,28px);border-left:1px solid #2A2A2A}
-.steps2 span{display:block;font-family:'Mona Sans',sans-serif;font-stretch:125%;font-weight:700;font-size:clamp(48px,5.4vw,84px);letter-spacing:-.05em;line-height:1;color:#3A3A3A;margin-bottom:28px}
-.steps2 h3{font-size:clamp(20px,1.7vw,24px);font-weight:600;margin:0 0 8px}
-.steps2 p{color:var(--mute);font-size:16px;line-height:1.45;margin:0}
-@media (max-width:900px){.steps2{grid-template-columns:1fr 1fr;row-gap:36px}.steps2 li:nth-child(3){padding-left:0;border-left:0}}
-#network .places{margin-bottom:0}
-.trio{list-style:none;margin:clamp(48px,8vh,96px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,.35)}
-.trio li{padding:24px 28px 0 0}.trio li+li{padding-left:28px;border-left:1px solid rgba(255,255,255,.18)}
-.trio h3{font-size:20px;font-weight:600;margin:0 0 6px}.trio p{color:var(--soft);font-size:16px;margin:0}
-@media (max-width:900px){.trio{grid-template-columns:1fr}.trio li+li{padding-left:0;border-left:0;margin-top:20px}}
-.faq-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,6vw,96px)}
-.faq2{border-top:1px solid #3A3A3A}
-.faq2 details{border-bottom:1px solid #2A2A2A}
-.faq2 summary{list-style:none;cursor:pointer;padding:24px 44px 24px 0;font-size:clamp(18px,1.6vw,22px);font-weight:600;position:relative}
-.faq2 summary::-webkit-details-marker{display:none}
-.faq2 summary::after{content:"";position:absolute;right:6px;top:50%;width:14px;height:14px;margin-top:-7px;background:linear-gradient(#fff,#fff) center/14px 2px no-repeat,linear-gradient(#fff,#fff) center/2px 14px no-repeat;transition:transform .25s}
-.faq2 details[open] summary::after{transform:rotate(45deg)}
-.faq2 p{color:var(--soft);font-size:17px;line-height:1.5;margin:0;padding:0 0 24px}
-.sister2{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin-top:clamp(72px,12vh,140px);padding-top:28px;border-top:1px solid #3A3A3A}
-.sister2 p{color:var(--soft);font-size:18px;margin:0}.sister2 b{color:#fff;font-weight:600}
-.sister2 .btn{color:#fff}
-@media (max-width:900px){.faq-grid{grid-template-columns:1fr}}
-#quote{border-top:1px solid var(--line)}
-
-/* no lines: studio style */
-.sx,#quote,#network,.marquee,footer{border-top:0!important;border-bottom:0!important}
-.tx,.steps2,.trio,.faq2,.docs2,.tri li,.sister2,.contact,.cols li,.tiers li{border-top:0!important}
-.tx article+article,.steps2 li+li,.trio li+li,.cols li+li,.tiers li+li{border-left:0!important}
-.faq2 details,.docs2 li,.contact div{border-bottom:0!important}
-.docs2 li{padding:12px 0}
-.faq2 summary{padding:18px 44px 18px 0}
-.tx article,.steps2 li,.trio li{padding-top:0}
-.tri li{padding-top:0}
-
-.drop{position:relative;grid-column:1/-1}
-.drop input[type=file]{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
-.drop-in{display:flex!important;flex-direction:column;gap:6px;cursor:pointer;border:1.5px dashed #5A5C61;border-radius:6px;padding:26px 22px;text-transform:none!important;letter-spacing:0!important;color:#fff!important;transition:border-color .2s,background .2s}
-.drop-in b{font-size:18px;font-weight:600}
-.drop-in span{font-size:15px;font-weight:400;color:var(--mute);line-height:1.4}
-.drop-in:hover,.drop.hot .drop-in,.drop input:focus-visible+.drop-in{border-color:#fff;background:rgba(255,255,255,.04)}
-.drop.over .drop-in{border-color:#E5484D}
-#filelist{list-style:none;margin:10px 0 0;padding:0}
-#filelist li{display:flex;justify-content:space-between;gap:16px;padding:8px 0;font-size:15px;color:#fff}
-#filelist i{font-style:normal;color:var(--mute);white-space:nowrap}
-.sent.show{border-top:0;padding-top:0;color:var(--soft);font-size:15px}
-footer{flex-direction:column;gap:14px}
-footer .legal{font-size:13px;line-height:1.6;color:#7C7F85;max-width:70em}
-footer .frow{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-
-/* tiers as plan cards */
-.tx{gap:clamp(28px,4vw,64px);margin-top:clamp(48px,8vh,96px)}
-.tx article,.tx article+article{padding:0!important;display:flex;flex-direction:column}
-.tx h3.tx-name{font-size:clamp(24px,2.2vw,32px);font-weight:600;letter-spacing:-.01em;text-transform:none;color:#fff;margin:0 0 10px;font-stretch:110%}
-.tx p.tx-for{font-size:16px;line-height:1.45;color:var(--mute);margin:0;min-height:2.9em;max-width:30ch}
-.tx-num{font-size:clamp(56px,6.4vw,104px);margin:28px 0 28px}
-.tx-cta{display:block;text-align:center;border:1px solid #4A4A4A;border-radius:6px;padding:13px 18px;font-size:15px;font-weight:600;color:#fff;text-decoration:none;transition:background .2s,color .2s,border-color .2s}
-.tx-cta:hover,.tx-cta:focus-visible{background:#fff;color:#000;border-color:#fff}
-.tx article:nth-child(2) .tx-cta{background:#fff;color:#000;border-color:#fff}
-.tx article:nth-child(2) .tx-cta:hover{background:#D9D9D9;border-color:#D9D9D9}
-.tx-list{list-style:none;margin:30px 0 0;padding:0;font-size:16px;line-height:1.45}
-.tx-list li{position:relative;padding:0 0 12px 26px;color:#E4E4E4}
-.tx-list li::before{content:"";position:absolute;left:2px;top:.42em;width:10px;height:5px;border-left:1.5px solid #9A9A9A;border-bottom:1.5px solid #9A9A9A;transform:rotate(-45deg)}
-.tx-list li.h{padding-left:0;color:var(--mute)}
-.tx-list li.h::before{display:none}
-@media (max-width:900px){.tx article+article{margin-top:56px!important}.tx p.tx-for{min-height:0}}
-
-/* short home page */
-.platform{min-height:0;padding:clamp(72px,13vh,140px) var(--pad)}
-.model,.sx,.band{padding-top:clamp(56px,9vh,104px)!important;padding-bottom:clamp(56px,9vh,104px)!important}
-.tri{margin-top:clamp(28px,4vh,48px)}
-.tri .clip{aspect-ratio:16/9;margin-bottom:16px}
-.tri .n{display:none}
-.tri h3{margin-bottom:8px}.tri p{font-size:16px}
-.tx{margin-top:clamp(32px,5vh,56px)}
-.tx-num{font-size:clamp(48px,5vw,80px);margin:18px 0 20px}
-.tx p.tx-for{min-height:0;max-width:none}
-.tx-cta{padding:11px 18px}
-.tx-list{margin-top:20px;font-size:15px}.tx-list li{padding-bottom:8px}
-.sx-note{margin-top:20px}
-.steps2{margin-top:clamp(32px,5vh,56px)}
-.steps2 span{font-size:clamp(32px,3.2vw,48px);margin-bottom:14px}
-.proofrow{display:flex;gap:16px 40px;flex-wrap:wrap;align-items:baseline;margin-top:clamp(36px,6vh,64px)}
-.proofrow p{font-family:'Mona Sans',sans-serif;font-stretch:112%;font-weight:600;font-size:clamp(20px,1.8vw,26px);letter-spacing:-.02em;margin:0;color:#fff}
-.proofrow ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 28px;color:var(--mute);font-size:16px}
-.quote-grid{margin-top:clamp(24px,4vh,40px);grid-template-columns:.6fr 1.4fr}
-form{gap:14px 20px;grid-template-columns:repeat(4,1fr)}
-form>label{grid-column:span 2}form>label.full,form>.full,form>.form-foot,form>.sent{grid-column:1/-1}
-.contact div{padding:8px 0}.contact b{font-size:16px}
-.drop-in{padding:16px 18px}
-textarea{min-height:0;height:44px}
-@media (max-width:900px){form{grid-template-columns:1fr 1fr}.quote-grid{grid-template-columns:1fr}.tri .clip{aspect-ratio:16/9}}
-.tri-link{display:inline-block;margin-top:14px;font-size:15px;font-weight:600;color:#fff;text-decoration:none;border-bottom:1px solid #5A5C61;padding-bottom:3px}.tri-link:hover{border-bottom-color:#fff}
-</style>
+<title>OrderShed — Machined parts from India, made to your drawing</title>
+<meta name="description" content="CNC machined parts for European engineering teams, made in India to your drawing and delivered with inspection documents.">
+<meta name="theme-color" content="#F4EFE6">
+<link rel="preload" href="/fonts/mona-sans-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-
-<header class="hero" id="top">
-  <video class="vbg" autoplay muted loop playsinline preload="auto" poster="hero.jpg"><source src="hero.mp4" type="video/mp4"></video>
-  <nav class="nav" aria-label="Main">
-    <a class="mark" href="#top">OrderShed</a>
-    <div class="links">
-      <a class="plain" href="#model">What we build</a>
-      <a class="plain" href="#tiers">Tolerances</a>
-      <a class="plain" href="#how">How it works</a>
-      <a class="plain" href="/faq">FAQ</a>
-      <a class="plain" href="https://app.ordershed.com">Log in</a>
-      <a class="cta" href="#quote">Get a quote</a>
-    </div>
-  </nav>
-  <div class="head">
-    <h1>Precision production, built in India.</h1>
-    <p class="sub">Parts, dedicated capacity and whole factories for European engineering teams, run end to end by OrderShed.</p>
-    <div class="ctas"><a class="solid" href="#model">What we build</a><a href="#quote">Get a quote</a></div>
+<header class="wrap nav">
+  <a class="mark" href="/">OrderShed</a>
+  <div class="links">
+    <a class="plain" href="#services">Services</a>
+    <a class="plain" href="#tiers">Tolerances</a>
+    <a class="plain" href="#how">How it works</a>
+    <a class="plain" href="/faq">FAQ</a>
+    <a class="plain" href="https://app.ordershed.com">Log in</a>
+    <a class="btn" href="#quote">Get a quote</a>
   </div>
-  <p class="vtag">Illustrative footage</p>
 </header>
-
 <main>
-  <section class="platform dark" id="platform">
-    <video class="vbg" autoplay muted loop playsinline preload="metadata" poster="coolant.jpg"><source src="coolant.mp4" type="video/mp4"></video>
-    <p class="kicker rv">The OrderShed platform</p>
-    <h2 class="rv">One system from quote to dispatch. <span>For every part, in every shop.</span></h2>
-    <p class="lede rv">Every order runs on the OrderShed platform. It prices your part from the CAD file, books capacity in the shop best suited to it, follows the job on the shop floor and keeps the measured results. You see status, inspection data and on-time delivery for each part, and so do we.</p>
-  </section>
+  <section class="hero"><div class="wrap">
+    <h1>Machined parts from India, made to your drawing.</h1>
+    <p class="lede">For European engineering teams. One partner from quote to delivery.</p>
+    <div class="ctas"><a class="btn" href="#quote">Get a quote</a><a class="btn ghost" href="#tiers">See tolerances</a></div>
+    <div class="media"><video autoplay muted loop playsinline preload="metadata" poster="/hero.jpg" aria-label="A CNC machine cutting a metal part"><source src="/hero.mp4" type="video/mp4"></video><small>Illustrative footage</small></div>
+  </div></section>
 
-  <section class="model" id="model">
-    <p class="kicker">Our model</p>
-    <h2 class="rv" style="font-family:'Instrument Serif',serif;font-weight:400;text-transform:none;font-size:clamp(44px,6.4vw,96px);line-height:.98;letter-spacing:-.02em">Production on demand.</h2>
-    <ul class="tri">
-      <li class="rv"><div class="clip"><video autoplay muted loop playsinline preload="metadata" poster="hero.jpg"><source src="hero.mp4" type="video/mp4"></video></div>
-        <span class="n">01</span><h3>Precision parts</h3><p>We machine parts to your drawing and tolerance tier, from the first article to repeat production batches.</p></li>
-      <li class="rv"><div class="clip"><video autoplay muted loop playsinline preload="metadata" poster="conveyor.jpg"><source src="conveyor.mp4" type="video/mp4"></video></div>
-        <span class="n">02</span><h3>Manufacturing as a service</h3><p>Machines, conveyors and inspection capacity reserved for your program in our partner shops, running on your schedule.</p></li>
-      <li class="rv"><div class="clip"><video autoplay muted loop playsinline preload="metadata" poster="floor.jpg"><source src="floor.mp4" type="video/mp4"></video></div>
-        <span class="n">03</span><h3>Factories as a service</h3><p>Complete component and assembly lines, designed and run by us in India, with robots, conveyors and tray-carrying robots doing the repetitive work.</p><a class="tri-link" href="https://nautomationlabs.com">Automation by nA labs, our robotics team<span aria-hidden="true"> →</span></a></li>
+  <section id="services"><div class="wrap">
+    <h2 class="rv">Three ways to work with us.</h2>
+    <ul class="three">
+      <li class="rv"><div class="media"><video autoplay muted loop playsinline preload="metadata" poster="/coolant.jpg" aria-label="A CNC machine cutting a part under coolant"><source src="/coolant.mp4" type="video/mp4"></video></div><h3>Precision parts</h3><p>Parts machined to your drawing, from first samples to repeat batches.</p></li>
+      <li class="rv"><div class="media"><video autoplay muted loop playsinline preload="metadata" poster="/conveyor.jpg" aria-label="Parts moving along a conveyor"><source src="/conveyor.mp4" type="video/mp4"></video></div><h3>Manufacturing as a service</h3><p>Machine and inspection capacity reserved for your programme.</p></li>
+      <li class="rv"><div class="media"><video autoplay muted loop playsinline preload="metadata" poster="/floor.jpg" aria-label="Tray-carrying robots on a factory floor"><source src="/floor.mp4" type="video/mp4"></video></div><h3>Factories as a service</h3><p>Complete lines built and run for you, with automation doing the repetitive work.</p><a class="text-link" href="https://nautomationlabs.com">Automation by nA labs</a></li>
     </ul>
-  </section>
+  </div></section>
 
-  <section class="sx" id="tiers">
-    <div class="sx-head">
-      <p class="kicker rv">Tolerance tiers</p>
-      <h2 class="rv">Three tiers.<br>Measured in microns.</h2>
+  <section id="tiers"><div class="wrap">
+    <h2 class="rv">Choose the tolerance your part needs.</h2>
+    <div class="tiers">
+      <article class="tier rv"><h3>Standard</h3><p class="for">For housings, brackets, covers and general machined parts.</p>
+        <div class="num">±100<i>µm</i></div><a class="btn ghost tx-cta" href="#quote" data-tier="0">Quote Standard</a>
+        <ul><li>10–12 working days</li><li>Sample inspection on every batch</li><li>Inspection report with measured values</li><li>Material certificate and certificate of conformance</li></ul></article>
+      <article class="tier rv"><h3>Precision</h3><p class="for">For fits, bores and the features your assembly depends on.</p>
+        <div class="num">±25<i>µm</i></div><a class="btn tx-cta" href="#quote" data-tier="1">Quote Precision</a>
+        <ul><li class="h">Everything in Standard, and:</li><li>15–17 working days</li><li>Critical features measured on every part</li><li>First article report before the batch runs</li></ul></article>
+      <article class="tier rv"><h3>Special</h3><p class="for">For features tighter than ±25 µm, down to about 10 µm.</p>
+        <div class="num">≈10<i>µm</i></div><a class="btn ghost tx-cta" href="#quote" data-tier="2">Quote Special</a>
+        <ul><li class="h">Everything in Precision, and:</li><li>Quoted per part, after we review your GD&amp;T</li><li>Inspection plan agreed with you before we cut</li><li>Lead time confirmed with the quote</li></ul></article>
     </div>
-    <div class="tx">
-      <article class="rv">
-        <h3 class="tx-name">Standard</h3>
-        <p class="tx-for">For housings, brackets, covers and general machined parts.</p>
-        <div class="tx-num">±100<i>µm</i></div>
-        <a class="tx-cta" href="#quote" data-tier="0">Quote Standard</a>
-        <ul class="tx-list">
-          <li>10–12 working days</li>
-          <li>Sample inspection on every batch</li>
-          <li>Inspection report with measured values</li>
-          <li>Material certificate and certificate of conformance</li>
-        </ul>
-      </article>
-      <article class="rv">
-        <h3 class="tx-name">Precision</h3>
-        <p class="tx-for">For fits, bores and the features your assembly depends on.</p>
-        <div class="tx-num">±25<i>µm</i></div>
-        <a class="tx-cta" href="#quote" data-tier="1">Quote Precision</a>
-        <ul class="tx-list">
-          <li class="h">Everything in Standard, and:</li>
-          <li>15–17 working days</li>
-          <li>Critical features measured on every part</li>
-          <li>First article report before the batch runs</li>
-        </ul>
-      </article>
-      <article class="rv">
-        <h3 class="tx-name">Special</h3>
-        <p class="tx-for">For features tighter than ±25 µm, down to about 10 µm.</p>
-        <div class="tx-num">≈10<i>µm</i></div>
-        <a class="tx-cta" href="#quote" data-tier="2">Quote Special</a>
-        <ul class="tx-list">
-          <li class="h">Everything in Precision, and:</li>
-          <li>Quoted per part, after we review your GD&amp;T</li>
-          <li>Inspection plan agreed with you before we cut</li>
-          <li>Lead time confirmed with the quote</li>
-        </ul>
-      </article>
-    </div>
-    <p class="sx-note rv">Lead times are production days, before shipping. Sourced locally, from India.</p>
-  </section>
+    <p class="note">Lead times are production days, before shipping.</p>
+  </div></section>
 
-  <section class="sx" id="how">
-    <div class="sx-head">
-      <p class="kicker rv">How it works</p>
-      <h2 class="rv">Drawing in.<br>Parts out.</h2>
-    </div>
-    <ol class="steps2">
-      <li class="rv"><span>01</span><h3>Send a drawing</h3><p>STEP and PDF, under NDA if you need it.</p></li>
-      <li class="rv"><span>02</span><h3>Get a quote</h3><p>Reviewed by an engineer, priced in euros.</p></li>
-      <li class="rv"><span>03</span><h3>We make and check</h3><p>Made in our network, inspected to your tier.</p></li>
-      <li class="rv"><span>04</span><h3>Delivered</h3><p>To your door, with every document.</p></li>
+  <section id="how"><div class="wrap">
+    <h2 class="rv">How an order works.</h2>
+    <ol class="steps">
+      <li class="rv"><h3>Send a drawing</h3><p>STEP and PDF, under NDA if you need it.</p></li>
+      <li class="rv"><h3>Get a quote</h3><p>Reviewed by an engineer, priced in euros.</p></li>
+      <li class="rv"><h3>We make and check</h3><p>Machined and inspected to your tier.</p></li>
+      <li class="rv"><h3>Delivered</h3><p>To your door, with every document.</p></li>
     </ol>
-    <div class="proofrow rv" id="proof">
-      <p>Every box carries its proof.</p>
-      <ul><li>Inspection report</li><li>Certificate of conformance</li><li>Material certificate</li><li>First article report</li><li>Export papers</li></ul>
-    </div>
-  </section>
+    <div class="docs rv" id="proof"><b>Every shipment comes with its inspection documents.</b>
+      <ul><li>Inspection report</li><li>Certificate of conformance</li><li>Material certificate</li><li>First article report</li><li>Export papers</li></ul></div>
+  </div></section>
 
-  <section class="band dark" id="quote">
-    <p class="kicker">Request a quote</p>
-    <h2 class="rv">Send us the part.</h2>
-    <div class="quote-grid">
-      <div class="contact">
-        <div><i>Email</i><b>office@nautomationlabs.com</b></div>
-        <div><i>Phone</i><b>+91 73388 71878</b></div>
-        <div><i>Company</i><b>NAutomation Labs Private Limited, Tamil Nadu, India</b></div>
-      </div>
+  <section id="platform" style="padding-top:0"><div class="wrap">
+    <div class="strip rv"><h2>Follow every order from quote to delivery.</h2>
+    <p>You see where each order stands, its inspection results and its delivery date in one place.</p></div>
+  </div></section>
+
+  <section id="quote"><div class="wrap">
+    <h2 class="rv">Send your drawing for a quote.</h2>
+    <p class="lede">Or email it to <a class="text-link" href="mailto:office@nautomationlabs.com">office@nautomationlabs.com</a>.</p>
+    <div class="formcard">
       <form id="rfq" action="https://formsubmit.co/office@nautomationlabs.com" method="POST" enctype="multipart/form-data" novalidate>
         <input type="hidden" name="_subject" value="New RFQ from ordershed.com">
         <input type="hidden" name="_template" value="table">
@@ -495,22 +105,20 @@ textarea{min-height:0;height:44px}
         <label class="full">About the part<textarea name="notes"></textarea></label>
         <div class="form-foot">
           <p id="formnote">We treat your drawings as confidential, and sign an NDA first if you ask.</p>
-          <button class="btn solid" type="submit">Send request</button>
+          <button class="btn" type="submit">Send request</button>
         </div>
         <div class="sent" id="sent" aria-live="polite"></div>
       </form>
     </div>
-  </section>
+  </div></section>
 </main>
-
-<footer>
-  <div class="frow">
+<footer><div class="wrap">
+  <div class="row">
     <span>OrderShed is the parts business of NAutomation Labs Private Limited. Footage is illustrative.</span>
-    <nav aria-label="Footer"><a href="#model">What we build</a><a href="#tiers">Tolerances</a><a href="#how">How it works</a><a href="/faq">FAQ</a><a href="https://nautomationlabs.com">nA labs</a><a href="#quote">Quote</a></nav>
+    <nav aria-label="Footer"><a href="#services">Services</a><a href="#tiers">Tolerances</a><a href="/faq">FAQ</a><a href="https://nautomationlabs.com">nA labs</a></nav>
   </div>
   <p class="legal">NAutomation Labs Private Limited · CIN U62011TZ2026PTC039414 · GSTIN 33AALCN7211L1ZB · Registered office: No. 86/16, Papanna Thottam, Brindhavan Nagar, TNHB Phase 7, Hosur, Krishnagiri 635109, Tamil Nadu, India · Phone +91 73388 71878 · Email office@nautomationlabs.com · Queries and grievances: Nithish Kalyan, Director</p>
-</footer>
-
+</div></footer>
 <script>
 (function(){
   const els=document.querySelectorAll('.rv');
@@ -531,7 +139,7 @@ textarea{min-height:0;height:44px}
   drop.addEventListener('drop',ev=>{if(ev.dataTransfer&&ev.dataTransfer.files.length){try{files.files=ev.dataTransfer.files}catch(_){ }show()}});
   f.addEventListener('submit',e=>{
     const d=new FormData(f);let bad=null;
-    ['name','company','email'].forEach(k=>{const el=f.elements[k],v=(d.get(k)||'').trim(),ok=v&&(k!=='email'||/^\S+@\S+\.\S+$/.test(v));el.style.borderBottomColor=ok?'':'#E5484D';if(!ok&&!bad)bad=el});
+    ['name','company','email'].forEach(k=>{const el=f.elements[k],v=(d.get(k)||'').trim(),ok=v&&(k!=='email'||/^\S+@\S+\.\S+$/.test(v));el.style.borderColor=ok?'':'#C0392B';if(!ok&&!bad)bad=el});
     if(bad){e.preventDefault();bad.focus();return}
     if(total()>MAX){e.preventDefault();drop.scrollIntoView({behavior:'smooth',block:'center'});return}
     if(!LIVE){e.preventDefault();sent.textContent='Preview only: nothing was sent. On the live site this form emails the request and files to office@nautomationlabs.com.';sent.classList.add('show');return}
@@ -541,5 +149,4 @@ textarea{min-height:0;height:44px}
 
   document.querySelectorAll('.tx-cta').forEach(a=>a.addEventListener('click',()=>{const r=document.querySelectorAll('input[name="tier"]')[+a.dataset.tier];if(r)r.checked=true;}));
 </script>
-</body>
-</html>
+</body></html>
